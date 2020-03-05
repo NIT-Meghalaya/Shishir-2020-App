@@ -8,6 +8,15 @@
     <fragment
         android:id="@+id/eventsListFragment"
         android:name="nitmeghalaya.shishir2020.screens.eventslist.EventsListFragment"
-        android:label="fragment_events_list"
-        tools:layout="@layout/fragment_events_list" />
+        android:label="Events"
+        tools:layout="@layout/fragment_events_list" >
+        <action
+            android:id="@+id/action_eventsListFragment_to_eventsScheduleFragment"
+            app:destination="@id/eventsScheduleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventsScheduleFragment"
+        android:name="nitmeghalaya.shishir2020.screens.eventsschedule.EventsScheduleFragment"
+        android:label="Schedule"
+        tools:layout="@layout/fragment_events_schedule" />
 </navigation>
