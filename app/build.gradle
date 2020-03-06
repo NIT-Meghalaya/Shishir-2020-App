@@ -76,4 +76,6 @@ dependencies {
     //Material Components
     implementation 'com.google.android.material:material:1.2.0-alpha05'
 
+    //Facebook Core SDK
+    implementation 'com.facebook.android:facebook-core:5.15.3'
 }
