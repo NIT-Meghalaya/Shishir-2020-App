@@ -15,4 +15,22 @@
         android:title="@string/schedule"
         app:showAsAction="always"
         android:orderInCategory="2" />
+
+    <item
+        android:id="@+id/shishirPageFeedFragment"
+        android:title="@string/feed"
+        app:showAsAction="always"
+        android:orderInCategory="3" />
+
+    <item
+        android:id="@+id/teamsListFragment"
+        android:title="@string/team"
+        app:showAsAction="always"
+        android:orderInCategory="4" />
+
+    <item
+        android:id="@+id/contactFragment"
+        android:title="@string/contact"
+        app:showAsAction="always"
+        android:orderInCategory="5" />
 </menu>
