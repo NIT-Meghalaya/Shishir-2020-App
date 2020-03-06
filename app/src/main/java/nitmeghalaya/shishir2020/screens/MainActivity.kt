@@ -1,14 +1,13 @@
-package nitmeghalaya.shishir2020
+package nitmeghalaya.shishir2020.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
+import nitmeghalaya.shishir2020.R
 
 class MainActivity : AppCompatActivity() {
 
