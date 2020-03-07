@@ -80,4 +80,8 @@ dependencies {
 
     //Firebase SDK for Google Analytics
     implementation 'com.google.firebase:firebase-analytics:17.2.3'
+
+    //Firebase Firestore KTX
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.4.1'
+
 }
