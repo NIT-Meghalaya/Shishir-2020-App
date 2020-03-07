@@ -1,14 +1,16 @@
 package nitmeghalaya.shishir2020.screens.eventslist
 
 import android.view.View
+import kotlinx.android.synthetic.main.item_event_list.view.*
 import nitmeghalaya.shishir2020.model.ShishirEvent
-import nitmeghalaya.shishir2020.screens.BaseFragment
 import nitmeghalaya.shishir2020.screens.BaseViewHolder
 
-class EventsListViewHolder (private val baseFragment: BaseFragment, itemView: View) : BaseViewHolder<ShishirEvent>(itemView){
+class EventsListViewHolder (itemView: View) : BaseViewHolder<ShishirEvent>(itemView){
 
     override fun bind(item: ShishirEvent) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        itemView.apply {
+            nameTV.text = item.name
+        }
     }
 
 }
