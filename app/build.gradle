@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -78,4 +77,7 @@ dependencies {
 
     //Facebook Core SDK
     implementation 'com.facebook.android:facebook-core:5.15.3'
+
+    //Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.2.3'
 }
