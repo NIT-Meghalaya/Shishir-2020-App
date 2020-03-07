@@ -84,4 +84,11 @@ dependencies {
     //Firebase Firestore KTX
     implementation 'com.google.firebase:firebase-firestore-ktx:21.4.1'
 
+    //Recyclerview
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
+
+    //Lottie
+    implementation 'com.airbnb.android:lottie:3.0.7'
 }
