@@ -5,17 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.model.ShishirEvent
-import nitmeghalaya.shishir2020.screens.BaseFragment
 
 class EventsListRecyclerViewAdapter(
-    private val baseFragment: BaseFragment,
-    private val shishirEvent: ArrayList<ShishirEvent>
-) :
-    RecyclerView.Adapter<EventsListViewHolder>() {
+    private val shishirEvent: List<ShishirEvent>): RecyclerView.Adapter<EventsListViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = EventsListViewHolder(
-        baseFragment, LayoutInflater.from(parent.context).inflate(
-            R.layout.item_event_list, parent, false
-        )
+        LayoutInflater.from(parent.context).inflate(R.layout.item_event_list, parent, false)
     )
 
     override fun getItemCount() = shishirEvent.size
