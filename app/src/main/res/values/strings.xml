@@ -9,6 +9,8 @@
     <string name="feed">Feed</string>
     <string name="team">Team</string>
     <string name="contact">Contact</string>
+    <string name="action_share">Share</string>
+    <string name="action_explore">Explore</string>
 
 
 </resources>
