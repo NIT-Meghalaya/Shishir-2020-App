@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/eventsListFragment"
         android:name="nitmeghalaya.shishir2020.screens.eventslist.EventsListFragment"
-        android:label="Events"
+        android:label="@string/events"
         tools:layout="@layout/fragment_events_list" >
         <action
             android:id="@+id/action_eventsListFragment_to_eventsScheduleFragment"
@@ -17,6 +17,33 @@
     <fragment
         android:id="@+id/eventsScheduleFragment"
         android:name="nitmeghalaya.shishir2020.screens.eventsschedule.EventsScheduleFragment"
-        android:label="Schedule"
-        tools:layout="@layout/fragment_events_schedule" />
+        android:label="@string/schedule"
+        tools:layout="@layout/fragment_events_schedule" >
+        <action
+            android:id="@+id/action_eventsScheduleFragment_to_shishirPageFeedFragment"
+            app:destination="@id/shishirPageFeedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shishirPageFeedFragment"
+        android:name="nitmeghalaya.shishir2020.screens.shishirpagefeed.ShishirPageFeedFragment"
+        android:label="@string/feed"
+        tools:layout="@layout/fragment_shishir_page_feed" >
+        <action
+            android:id="@+id/action_shishirPageFeedFragment_to_teamsListFragment"
+            app:destination="@id/teamsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamsListFragment"
+        android:name="nitmeghalaya.shishir2020.screens.teams.TeamsListFragment"
+        android:label="@string/team"
+        tools:layout="@layout/fragment_teams_list" >
+        <action
+            android:id="@+id/action_teamsListFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="nitmeghalaya.shishir2020.screens.contact.ContactFragment"
+        android:label="@string/contact"
+        tools:layout="@layout/fragment_contact" />
 </navigation>
