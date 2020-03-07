@@ -8,29 +8,34 @@
         android:id="@+id/eventsListFragment"
         android:title="@string/events"
         app:showAsAction="always"
-        android:orderInCategory="1" />
+        android:orderInCategory="1"
+        android:icon="@android:drawable/ic_dialog_map"/>
 
     <item
         android:id="@+id/eventsScheduleFragment"
         android:title="@string/schedule"
         app:showAsAction="always"
-        android:orderInCategory="2" />
+        android:orderInCategory="2"
+        android:icon="@android:drawable/ic_dialog_map" />
 
     <item
         android:id="@+id/shishirPageFeedFragment"
         android:title="@string/feed"
         app:showAsAction="always"
-        android:orderInCategory="3" />
+        android:orderInCategory="3"
+        android:icon="@android:drawable/ic_dialog_map" />
 
     <item
         android:id="@+id/teamsListFragment"
         android:title="@string/team"
         app:showAsAction="always"
-        android:orderInCategory="4" />
+        android:orderInCategory="4"
+        android:icon="@android:drawable/ic_dialog_map" />
 
     <item
         android:id="@+id/contactFragment"
         android:title="@string/contact"
         app:showAsAction="always"
-        android:orderInCategory="5" />
+        android:orderInCategory="5"
+        android:icon="@android:drawable/ic_dialog_map" />
 </menu>
