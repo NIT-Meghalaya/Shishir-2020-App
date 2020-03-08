@@ -2,6 +2,7 @@ package nitmeghalaya.shishir2020.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import nitmeghalaya.shishir2020.model.FacebookPageFeed
 import nitmeghalaya.shishir2020.network.FacebookPageApiService
 import nitmeghalaya.shishir2020.network.RetrofitService
 import retrofit2.Call
@@ -21,15 +22,16 @@ class FacebookPageRepository {
     fun getPageFeed(accessToken: String): LiveData<String> {
         val pageFeedStringLiveData = MutableLiveData<String>()
 
-        facebookPageApiService.getPageFeed(accessToken).enqueue(object : Callback<String> {
-            override fun onFailure(call: Call<String>, t: Throwable) {
-                pageFeedStringLiveData.value = "Failure: " + t.localizedMessage
-            }
+        facebookPageApiService.getPageFeed(accessToken, FacebookPageFeed.getAllProperties())
+            .enqueue(object : Callback<String> {
+                override fun onFailure(call: Call<String>, t: Throwable) {
+                    pageFeedStringLiveData.value = "Failure: " + t.localizedMessage
+                }
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                pageFeedStringLiveData.value = response.body()
-            }
-        })
+                override fun onResponse(call: Call<String>, response: Response<String>) {
+                    pageFeedStringLiveData.value = response.body()
+                }
+            })
 
         return pageFeedStringLiveData
     }
