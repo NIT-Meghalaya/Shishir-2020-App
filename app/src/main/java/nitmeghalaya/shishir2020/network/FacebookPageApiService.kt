@@ -1,6 +1,6 @@
 package nitmeghalaya.shishir2020.network
 
-import nitmeghalaya.shishir2020.model.FacebookPageFeed
+import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeed
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

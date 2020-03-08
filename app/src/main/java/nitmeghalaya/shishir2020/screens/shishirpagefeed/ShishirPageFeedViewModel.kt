@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.ktx.toObject
 import nitmeghalaya.shishir2020.model.AccessToken
-import nitmeghalaya.shishir2020.model.FacebookPageFeed
+import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeed
 import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import timber.log.Timber

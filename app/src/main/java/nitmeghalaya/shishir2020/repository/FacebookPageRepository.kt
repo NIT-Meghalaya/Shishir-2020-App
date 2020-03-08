@@ -2,8 +2,8 @@ package nitmeghalaya.shishir2020.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import nitmeghalaya.shishir2020.model.FacebookPageFeed
-import nitmeghalaya.shishir2020.model.FacebookPageFeedItem
+import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeed
+import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeedItem
 import nitmeghalaya.shishir2020.network.FacebookPageApiService
 import nitmeghalaya.shishir2020.network.RetrofitService
 import retrofit2.Call
