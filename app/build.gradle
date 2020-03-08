@@ -36,6 +36,7 @@ dependencies {
     def lifecycle_version = '2.2.0'
     def koin_version = '2.0.1'
     def splitties_version = '3.0.0-alpha06'
+    def retrofit_version = '2.7.2'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -84,11 +85,13 @@ dependencies {
     //Firebase Firestore KTX
     implementation 'com.google.firebase:firebase-firestore-ktx:21.4.1'
 
-    //Recyclerview
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
     // For control over item selection of both touch and mouse driven selection
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
 
     //Lottie
     implementation 'com.airbnb.android:lottie:3.0.7'
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
 }
