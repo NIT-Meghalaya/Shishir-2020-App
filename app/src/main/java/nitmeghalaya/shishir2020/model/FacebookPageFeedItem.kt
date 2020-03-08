@@ -15,7 +15,7 @@ class FacebookPageFeedItem(
     @Json(name = "created_time") val createdTime: String = ""
 ) {
 
-//    companion object {
-//        fun getAllProperties(): String = "id,message,from,full_picture,created_time"
-//    }
+    companion object {
+        fun getAllProperties(): String = "id,message,full_picture,created_time"
+    }
 }
