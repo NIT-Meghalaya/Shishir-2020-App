@@ -3,8 +3,6 @@ package nitmeghalaya.shishir2020.repository
 import com.facebook.AccessToken
 import com.facebook.GraphRequest
 import com.facebook.HttpMethod
-import splitties.toast.toast
-import timber.log.Timber
 
 /**
  * Created by Devansh on 7/3/20
@@ -12,7 +10,7 @@ import timber.log.Timber
 
 class FacebookPageRepository {
 
-    public fun getFeed(pageId: String, accessToken: AccessToken) {
+    fun getPageFeed(pageId: String, accessToken: AccessToken, action: () -> Unit) {
 
         GraphRequest(
             accessToken,
@@ -20,10 +18,7 @@ class FacebookPageRepository {
             null,
             HttpMethod.GET,
             GraphRequest.Callback {
-                it?.apply {
-                    Timber.i(jsonObject.toString())
-                    toast(jsonObject.toString())
-                }
+                action()
             }
         ).executeAsync()
     }
