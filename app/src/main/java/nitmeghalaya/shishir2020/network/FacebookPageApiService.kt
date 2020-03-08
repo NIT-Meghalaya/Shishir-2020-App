@@ -1,5 +1,6 @@
 package nitmeghalaya.shishir2020.network
 
+import nitmeghalaya.shishir2020.model.FacebookPageFeed
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -13,5 +14,5 @@ interface FacebookPageApiService {
     @GET("feed")
     fun getPageFeed(@Query("access_token") accessToken: String,
                     @Query("fields") fields: String
-    ): Call<String>
+    ): Call<FacebookPageFeed>
 }

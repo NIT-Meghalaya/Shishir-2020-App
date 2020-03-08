@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.ktx.toObject
 import nitmeghalaya.shishir2020.model.AccessToken
+import nitmeghalaya.shishir2020.model.FacebookPageFeed
 import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import timber.log.Timber
@@ -17,8 +18,7 @@ class ShishirPageFeedViewModel(private val firestoreRepository: FirestoreReposit
                                private val facebookPageRepository: FacebookPageRepository): ViewModel() {
 
 
-    fun getPageFeed(accessToken: String): LiveData<String> {
-
+    fun getPageFeed(accessToken: String): LiveData<FacebookPageFeed> {
         return facebookPageRepository.getPageFeed(accessToken)
     }
 

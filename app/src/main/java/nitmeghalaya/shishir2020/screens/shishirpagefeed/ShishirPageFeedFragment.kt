@@ -24,7 +24,7 @@ class ShishirPageFeedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         shishirPageFeedViewModel.getFacebookAccessToken().observe(viewLifecycleOwner, Observer {
             shishirPageFeedViewModel.getPageFeed(it.accessToken).observe(viewLifecycleOwner, Observer {feedData ->
-                textView.text = feedData
+                textView.text = feedData.toString()
             })
         })
     }

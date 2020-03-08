@@ -37,6 +37,7 @@ dependencies {
     def koin_version = '2.0.1'
     def splitties_version = '3.0.0-alpha06'
     def retrofit_version = '2.7.2'
+    def moshi_version = '1.9.2'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -90,11 +91,11 @@ dependencies {
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-
-    //Retrofit Scalars converter
-    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
-
     //Moshi for Retrofit (for parsing JSON)
-    implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
+    //Moshi
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+    //Moshi Kotlin
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
 }
