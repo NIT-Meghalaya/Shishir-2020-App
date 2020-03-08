@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.facebook.AccessToken
 import com.google.firebase.firestore.ktx.toObject
 import nitmeghalaya.shishir2020.model.BasicFacebookAccessTokenCreator
+import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import timber.log.Timber
 
@@ -13,11 +14,14 @@ import timber.log.Timber
  * Created by Devansh on 6/3/20
  */
 
-class ShishirPageFeedViewModel(private val firestoreRepository: FirestoreRepository): ViewModel() {
+class ShishirPageFeedViewModel(private val firestoreRepository: FirestoreRepository,
+                               private val facebookPageRepository: FacebookPageRepository): ViewModel() {
 
     companion object {
         private const val PAGE_ID = "347129762068773"
     }
+
+    //fun getPageFeed(): LiveData
 
     fun getFacebookAccessToken(): LiveData<AccessToken> {
         val accessTokenLiveData = MutableLiveData<AccessToken>()
