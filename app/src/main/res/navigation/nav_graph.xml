@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_eventsListFragment_to_eventsScheduleFragment"
             app:destination="@id/eventsScheduleFragment" />
+        <action
+            android:id="@+id/action_eventsListFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventsScheduleFragment"
@@ -46,4 +49,22 @@
         android:name="nitmeghalaya.shishir2020.screens.contact.ContactFragment"
         android:label="@string/contact"
         tools:layout="@layout/fragment_contact" />
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="nitmeghalaya.shishir2020.screens.eventdescription.EventDetailFragment"
+        android:label="EventDetailFragment" >
+        <argument
+            android:name="event"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="eventImage"
+            app:argType="string" />
+        <argument
+            android:name="eventName"
+            app:argType="string" />
+        <argument
+            android:name="registrationLink"
+            app:argType="string" />
+    </fragment>
 </navigation>

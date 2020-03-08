@@ -91,4 +91,16 @@ dependencies {
 
     //Lottie
     implementation 'com.airbnb.android:lottie:3.0.7'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //Koin AndroidX ViewModel features
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    //ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+//Moshi library
+    implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
 }
