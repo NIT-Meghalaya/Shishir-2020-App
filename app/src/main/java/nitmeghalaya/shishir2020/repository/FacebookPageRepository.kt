@@ -3,7 +3,6 @@ package nitmeghalaya.shishir2020.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import nitmeghalaya.shishir2020.model.FacebookPageFeed
-import nitmeghalaya.shishir2020.model.FacebookPageFeedItem
 import nitmeghalaya.shishir2020.network.FacebookPageApiService
 import nitmeghalaya.shishir2020.network.RetrofitService
 import retrofit2.Call
@@ -24,7 +23,7 @@ class FacebookPageRepository {
     fun getPageFeed(accessToken: String): LiveData<FacebookPageFeed> {
         val pageFeedStringLiveData = MutableLiveData<FacebookPageFeed>()
 
-        facebookPageApiService.getPageFeed(accessToken, FacebookPageFeedItem.getAllProperties())
+        facebookPageApiService.getPageFeed(accessToken, "id,message,full_picture,created_time")
             .enqueue(object : Callback<FacebookPageFeed> {
                 override fun onFailure(call: Call<FacebookPageFeed>, t: Throwable) {
                     Timber.e("Failure: " + t.localizedMessage)
@@ -32,6 +31,7 @@ class FacebookPageRepository {
 
                 override fun onResponse(call: Call<FacebookPageFeed>, response: Response<FacebookPageFeed>) {
                     pageFeedStringLiveData.value = response.body()
+                    Timber.i(response.body().toString())
                 }
             })
 
