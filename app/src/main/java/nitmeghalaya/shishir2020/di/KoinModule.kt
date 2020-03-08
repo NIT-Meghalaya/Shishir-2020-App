@@ -3,7 +3,7 @@ package nitmeghalaya.shishir2020.di
 import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import nitmeghalaya.shishir2020.screens.eventslist.EventsListViewModel
-import nitmeghalaya.shishir2020.screens.facebookpagefeed.ShishirPageFeedViewModel
+import nitmeghalaya.shishir2020.screens.facebookpagefeed.FacebookPageFeedViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -20,6 +20,6 @@ val facebookPageRepositoryModule = module {
 }
 
 val appModule = module {
-    viewModel { ShishirPageFeedViewModel(get(), get()) }
+    viewModel { FacebookPageFeedViewModel(get(), get()) }
     viewModel { EventsListViewModel(get()) }
 }

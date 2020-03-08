@@ -10,9 +10,9 @@ import kotlinx.android.synthetic.main.fragment_shishir_page_feed.*
 import nitmeghalaya.shishir2020.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ShishirPageFeedFragment : Fragment() {
+class FacebookPageFeedFragment : Fragment() {
 
-    private val shishirPageFeedViewModel: ShishirPageFeedViewModel by viewModel()
+    private val facebookPageFeedViewModel: FacebookPageFeedViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,9 +22,9 @@ class ShishirPageFeedFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        shishirPageFeedViewModel.getFacebookAccessToken().observe(viewLifecycleOwner, Observer {
-            shishirPageFeedViewModel.getPageFeed(it.accessToken).observe(viewLifecycleOwner, Observer {feedData ->
-                textView.text = feedData.toString()
+        facebookPageFeedViewModel.getFacebookAccessToken().observe(viewLifecycleOwner, Observer {
+            facebookPageFeedViewModel.getPageFeed(it.accessToken).observe(viewLifecycleOwner, Observer { feedData ->
+                recyclerView.adapter = FacebookPageFeedRecyclerViewAdapter(feedData.data)
             })
         })
     }

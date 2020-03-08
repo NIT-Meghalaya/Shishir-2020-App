@@ -14,8 +14,8 @@ import timber.log.Timber
  * Created by Devansh on 6/3/20
  */
 
-class ShishirPageFeedViewModel(private val firestoreRepository: FirestoreRepository,
-                               private val facebookPageRepository: FacebookPageRepository): ViewModel() {
+class FacebookPageFeedViewModel(private val firestoreRepository: FirestoreRepository,
+                                private val facebookPageRepository: FacebookPageRepository): ViewModel() {
 
 
     fun getPageFeed(accessToken: String): LiveData<FacebookPageFeed> {
