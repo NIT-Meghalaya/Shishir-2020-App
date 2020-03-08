@@ -1,4 +1,4 @@
-package nitmeghalaya.shishir2020.screens.shishirpagefeed
+package nitmeghalaya.shishir2020.screens.facebookpagefeed
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

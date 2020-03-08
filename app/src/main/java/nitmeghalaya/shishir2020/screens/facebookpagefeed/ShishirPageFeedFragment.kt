@@ -1,4 +1,4 @@
-package nitmeghalaya.shishir2020.screens.shishirpagefeed
+package nitmeghalaya.shishir2020.screens.facebookpagefeed
 
 import android.os.Bundle
 import android.view.LayoutInflater
