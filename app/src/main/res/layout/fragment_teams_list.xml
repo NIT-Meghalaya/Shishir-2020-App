@@ -16,6 +16,7 @@
         android:layout_height="wrap_content" >
 
         <ImageView
+            android:padding="5dp"
             android:id="@+id/imageView"
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_80sdp"
