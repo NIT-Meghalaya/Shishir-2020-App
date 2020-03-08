@@ -3,9 +3,7 @@ package nitmeghalaya.shishir2020.screens.shishirpagefeed
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.facebook.AccessToken
 import com.google.firebase.firestore.ktx.toObject
-import nitmeghalaya.shishir2020.model.BasicFacebookAccessTokenCreator
 import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import timber.log.Timber
@@ -17,19 +15,18 @@ import timber.log.Timber
 class ShishirPageFeedViewModel(private val firestoreRepository: FirestoreRepository,
                                private val facebookPageRepository: FacebookPageRepository): ViewModel() {
 
-    companion object {
-        private const val PAGE_ID = "347129762068773"
+
+    fun getPageFeed(accessToken: String): LiveData<String> {
+
+        return facebookPageRepository.getPageFeed(accessToken)
     }
 
-    //fun getPageFeed(): LiveData
-
-    fun getFacebookAccessToken(): LiveData<AccessToken> {
-        val accessTokenLiveData = MutableLiveData<AccessToken>()
+    fun getFacebookAccessToken(): LiveData<String> {
+        val accessTokenLiveData = MutableLiveData<String>()
 
         firestoreRepository.getFacebookAccessTokenCreator("shishirPage")
             .addOnSuccessListener {
-                val accessTokenCreator = it.toObject<BasicFacebookAccessTokenCreator>()
-                accessTokenLiveData.value = accessTokenCreator?.makeAccessToken()
+                accessTokenLiveData.value = it.toObject<String>()
             }.addOnFailureListener {
                 Timber.e("Failed to get access token")
             }

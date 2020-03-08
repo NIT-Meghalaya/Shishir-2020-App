@@ -1,8 +1,12 @@
 package nitmeghalaya.shishir2020.repository
 
-import com.facebook.AccessToken
-import com.facebook.GraphRequest
-import com.facebook.HttpMethod
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import nitmeghalaya.shishir2020.network.FacebookPageApiService
+import nitmeghalaya.shishir2020.network.RetrofitService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 /**
  * Created by Devansh on 7/3/20
@@ -10,17 +14,23 @@ import com.facebook.HttpMethod
 
 class FacebookPageRepository {
 
-    fun getPageFeed(pageId: String, accessToken: AccessToken, action: () -> Unit) {
-
-        GraphRequest(
-            accessToken,
-            "/$pageId/feed",
-            null,
-            HttpMethod.GET,
-            GraphRequest.Callback {
-                action()
-            }
-        ).executeAsync()
+    private val facebookPageApiService: FacebookPageApiService by lazy {
+        RetrofitService.createService(FacebookPageApiService::class.java)
     }
 
+    fun getPageFeed(accessToken: String): LiveData<String> {
+        val pageFeedStringLiveData = MutableLiveData<String>()
+
+        facebookPageApiService.getPageFeed(accessToken).enqueue(object : Callback<String> {
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                pageFeedStringLiveData.value = "Failure: " + t.localizedMessage
+            }
+
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                pageFeedStringLiveData.value = response.body()
+            }
+        })
+
+        return pageFeedStringLiveData
+    }
 }

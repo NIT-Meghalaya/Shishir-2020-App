@@ -1,5 +1,6 @@
 package nitmeghalaya.shishir2020.di
 
+import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import nitmeghalaya.shishir2020.screens.eventslist.EventsListViewModel
 import nitmeghalaya.shishir2020.screens.shishirpagefeed.ShishirPageFeedViewModel
@@ -14,7 +15,11 @@ val firestoreRepositoryModule = module {
     single { FirestoreRepository() }
 }
 
+val facebookPageRepositoryModule = module {
+    single { FacebookPageRepository() }
+}
+
 val appModule = module {
-    viewModel { ShishirPageFeedViewModel(get()) }
+    viewModel { ShishirPageFeedViewModel(get(), get()) }
     viewModel { EventsListViewModel(get()) }
 }

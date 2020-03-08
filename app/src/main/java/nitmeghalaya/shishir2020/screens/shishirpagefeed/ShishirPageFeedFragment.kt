@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import kotlinx.android.synthetic.main.fragment_shishir_page_feed.*
 import nitmeghalaya.shishir2020.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import timber.log.Timber
 
 class ShishirPageFeedFragment : Fragment() {
 
@@ -23,7 +23,9 @@ class ShishirPageFeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         shishirPageFeedViewModel.getFacebookAccessToken().observe(viewLifecycleOwner, Observer {
-            Timber.i(it.toString())
+            shishirPageFeedViewModel.getPageFeed(it).observe(viewLifecycleOwner, Observer {feedData ->
+                textView.text = feedData
+            })
         })
     }
 }
