@@ -2,6 +2,7 @@ package nitmeghalaya.shishir2020
 
 import android.app.Application
 import nitmeghalaya.shishir2020.di.appModule
+import nitmeghalaya.shishir2020.di.facebookPageRepositoryModule
 import nitmeghalaya.shishir2020.di.firestoreRepositoryModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -18,7 +19,7 @@ class ShishirApplication: Application() {
 
         startKoin {
             androidContext(this@ShishirApplication)
-            modules(listOf(appModule, firestoreRepositoryModule))
+            modules(listOf(appModule, firestoreRepositoryModule, facebookPageRepositoryModule))
         }
 
         if (BuildConfig.DEBUG) {

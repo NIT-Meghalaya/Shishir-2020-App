@@ -1,11 +1,11 @@
-package nitmeghalaya.shishir2020.screens.shishirpagefeed
+package nitmeghalaya.shishir2020.screens.facebookpagefeed
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.facebook.AccessToken
 import com.google.firebase.firestore.ktx.toObject
-import nitmeghalaya.shishir2020.model.BasicFacebookAccessTokenCreator
+import nitmeghalaya.shishir2020.model.AccessToken
+import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeed
 import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import timber.log.Timber
@@ -14,22 +14,20 @@ import timber.log.Timber
  * Created by Devansh on 6/3/20
  */
 
-class ShishirPageFeedViewModel(private val firestoreRepository: FirestoreRepository,
-                               private val facebookPageRepository: FacebookPageRepository): ViewModel() {
+class FacebookPageFeedViewModel(private val firestoreRepository: FirestoreRepository,
+                                private val facebookPageRepository: FacebookPageRepository): ViewModel() {
 
-    companion object {
-        private const val PAGE_ID = "347129762068773"
+
+    fun getPageFeed(accessToken: String): LiveData<FacebookPageFeed> {
+        return facebookPageRepository.getPageFeed(accessToken)
     }
-
-    //fun getPageFeed(): LiveData
 
     fun getFacebookAccessToken(): LiveData<AccessToken> {
         val accessTokenLiveData = MutableLiveData<AccessToken>()
 
         firestoreRepository.getFacebookAccessTokenCreator("shishirPage")
             .addOnSuccessListener {
-                val accessTokenCreator = it.toObject<BasicFacebookAccessTokenCreator>()
-                accessTokenLiveData.value = accessTokenCreator?.makeAccessToken()
+                accessTokenLiveData.value = it.toObject<AccessToken>()
             }.addOnFailureListener {
                 Timber.e("Failed to get access token")
             }
