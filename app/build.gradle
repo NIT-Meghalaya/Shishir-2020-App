@@ -103,4 +103,7 @@ dependencies {
 
 //Moshi library
     implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
+
+    //Coil Image Loading Lib.
+    implementation "io.coil-kt:coil:0.7.0"
 }

@@ -15,7 +15,6 @@ val firestoreRepositoryModule = module {
 }
 
 val appModule = module {
-    viewModel { ShishirPageFeedViewModel(get()) }
+//    viewModel { ShishirPageFeedViewModel(get()) }
     viewModel { EventsListViewModel(get()) }
-
 }

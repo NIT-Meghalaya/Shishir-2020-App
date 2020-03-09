@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import nitmeghalaya.shishir2020.R
+import nitmeghalaya.shishir2020.screens.MainActivity
 
 class EventsScheduleFragment : Fragment() {
 
@@ -15,7 +16,14 @@ class EventsScheduleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_events_schedule, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_event_schedule, container, false)
+        (activity as MainActivity).supportActionBar?.title = "Schedule"
+        view.apply {
+//            viewPager.adapter = SchedulePagerAdapter(fragmentManager!!)
+//            tabLayout.setupWithViewPager(viewPager)
+        }
+        return view
     }
 
 
