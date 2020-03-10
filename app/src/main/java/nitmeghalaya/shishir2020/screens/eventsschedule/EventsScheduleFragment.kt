@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_event_schedule.view.*
 
 import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.screens.MainActivity

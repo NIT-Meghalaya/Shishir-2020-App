@@ -106,4 +106,7 @@ dependencies {
 
     //Coil Image Loading Lib.
     implementation "io.coil-kt:coil:0.7.0"
+
+    //safargs
+    apply plugin: "androidx.navigation.safeargs.kotlin"
 }
