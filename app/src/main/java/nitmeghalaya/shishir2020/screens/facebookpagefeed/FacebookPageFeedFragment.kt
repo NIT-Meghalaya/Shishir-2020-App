@@ -1,4 +1,4 @@
-package nitmeghalaya.shishir2020.screens.shishirpagefeed
+package nitmeghalaya.shishir2020.screens.facebookpagefeed
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import kotlinx.android.synthetic.main.fragment_shishir_page_feed.*
 import nitmeghalaya.shishir2020.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import timber.log.Timber
 
-class ShishirPageFeedFragment : Fragment() {
+class FacebookPageFeedFragment : Fragment() {
 
-    private val shishirPageFeedViewModel: ShishirPageFeedViewModel by viewModel()
+    private val facebookPageFeedViewModel: FacebookPageFeedViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,8 +22,10 @@ class ShishirPageFeedFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        shishirPageFeedViewModel.getFacebookAccessToken().observe(viewLifecycleOwner, Observer {
-            Timber.i(it.toString())
+        facebookPageFeedViewModel.getFacebookAccessToken().observe(viewLifecycleOwner, Observer {
+            facebookPageFeedViewModel.getPageFeed(it.accessToken).observe(viewLifecycleOwner, Observer { feedData ->
+                recyclerView.adapter = FacebookPageFeedRecyclerViewAdapter(feedData.data)
+            })
         })
     }
 }

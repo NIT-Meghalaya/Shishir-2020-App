@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/shishirPageFeedFragment"
-        android:name="nitmeghalaya.shishir2020.screens.shishirpagefeed.ShishirPageFeedFragment"
+        android:name="nitmeghalaya.shishir2020.screens.facebookpagefeed.FacebookPageFeedFragment"
         android:label="@string/feed"
         tools:layout="@layout/fragment_shishir_page_feed" >
         <action
