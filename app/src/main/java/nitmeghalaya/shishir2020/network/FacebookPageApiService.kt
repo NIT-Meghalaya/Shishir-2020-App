@@ -11,7 +11,7 @@ import retrofit2.http.Query
 
 interface FacebookPageApiService {
 
-    @GET("feed")
+    @GET("published_posts")
     fun getPageFeed(@Query("access_token") accessToken: String,
                     @Query("fields") fields: String
     ): Call<FacebookPageFeed>
