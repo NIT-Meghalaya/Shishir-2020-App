@@ -19,13 +19,13 @@ class FacebookPageFeedViewModel(private val firestoreRepository: FirestoreReposi
 
 
     fun getPageFeed(accessToken: String): LiveData<FacebookPageFeed> {
-        return facebookPageRepository.getPageFeed(accessToken)
+        return facebookPageRepository.getPageFeedLiveData(accessToken)
     }
 
     fun getFacebookAccessToken(): LiveData<AccessToken> {
         val accessTokenLiveData = MutableLiveData<AccessToken>()
 
-        firestoreRepository.getFacebookAccessTokenCreator("shishirPage")
+        firestoreRepository.getFacebookAccessTokenCreator(FirestoreRepository.SHISHIR_PAGE)
             .addOnSuccessListener {
                 accessTokenLiveData.value = it.toObject<AccessToken>()
             }.addOnFailureListener {
