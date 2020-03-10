@@ -7,7 +7,8 @@ import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.model.ShishirEvent
 
 class EventsListRecyclerViewAdapter(
-    private val shishirEvent: List<ShishirEvent>): RecyclerView.Adapter<EventsListViewHolder>() {
+    private val shishirEvent: List<ShishirEvent>
+) : RecyclerView.Adapter<EventsListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = EventsListViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_event_list, parent, false)
