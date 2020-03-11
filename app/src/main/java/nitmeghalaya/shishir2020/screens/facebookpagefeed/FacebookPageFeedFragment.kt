@@ -29,12 +29,5 @@ class FacebookPageFeedFragment : Fragment() {
             adapter.submitList(it)
 
         })
-//        facebookPageFeedViewModel.getFacebookAccessToken().observe(viewLifecycleOwner, Observer {
-//            facebookPageFeedViewModel.getPageFeed(it.accessToken).observe(viewLifecycleOwner, Observer { feedData ->
-//                recyclerView.adapter = FacebookPageFeedRecyclerViewAdapter(feedData.data.filter {item ->
-//                    item.message.isNotEmpty()
-//                })
-//            })
-//        })
     }
 }

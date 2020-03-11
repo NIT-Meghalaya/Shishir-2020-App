@@ -12,12 +12,16 @@ class FacebookPageFeedItem(
     val id: String = "",
     val message: String = "",
     @Json(name = "full_picture") val fullPictureUrl: String = "",
-    @Json(name = "created_time") val createdTime: String = ""
+    @Json(name = "created_time") val createdTime: String = "",
+    @Json(name = "permalink_url") val permalinkUrl: String = "",
+    private val attachments: FacebookFeedItemAttachments = FacebookFeedItemAttachments()
 ) {
 
     companion object {
         fun getAllProperties(): String = "id,message,full_picture,created_time"
     }
+
+    fun getMediaType() = attachments.data[0].mediaType
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
