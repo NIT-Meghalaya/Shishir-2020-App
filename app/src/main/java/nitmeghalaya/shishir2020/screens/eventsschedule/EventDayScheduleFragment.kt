@@ -19,16 +19,16 @@ class EventDayScheduleFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view= inflater.inflate(R.layout.fragment_event_day_schedule,container,false)
 
+        return inflater.inflate(R.layout.fragment_event_day_schedule,container,false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         view.apply {
             scheduleRecyclerView.apply {
                 adapter = EventDayScheduleRecyclerViewAdapter(viewModel.getSchedule())
                 layoutManager = LinearLayoutManager(context)
             }
         }
-
-        return view
     }
-
 }

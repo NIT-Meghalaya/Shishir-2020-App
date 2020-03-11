@@ -2,7 +2,6 @@ package nitmeghalaya.shishir2020.screens.eventsschedule
 
 import android.view.View
 import coil.api.load
-import kotlinx.android.synthetic.main.fragment_event_detail_item.view.*
 import kotlinx.android.synthetic.main.item_day_schedule.view.*
 import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.model.ScheduleItem
@@ -13,7 +12,7 @@ class EventDayScheduleViewHolder(view: View) : BaseViewHolder<ScheduleItem>(view
         itemView.apply {
             startTimeTV.text = item.startTime
             endTimeTV.text = item.endTime
-            titleTV.text = item.name
+            eventTitleTV.text = item.name
             imageView.load(R.drawable.technical)
         }
     }

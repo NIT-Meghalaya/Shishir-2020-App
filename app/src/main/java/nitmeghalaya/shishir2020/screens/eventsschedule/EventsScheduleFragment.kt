@@ -8,10 +8,9 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_event_schedule.view.*
 
 import nitmeghalaya.shishir2020.R
-import nitmeghalaya.shishir2020.screens.BaseFragment
 import nitmeghalaya.shishir2020.screens.MainActivity
 
-class EventsScheduleFragment : BaseFragment() {
+class EventsScheduleFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,7 +19,7 @@ class EventsScheduleFragment : BaseFragment() {
         // Inflate the layout for this fragment
 
         val view = inflater.inflate(R.layout.fragment_event_schedule, container, false)
-        (activity as MainActivity).supportActionBar?.title = "Schedule"
+      (activity as MainActivity).supportActionBar?.title = "Schedule"
         view.apply {
             viewPager.adapter = EventSchedulePageAdapter(fragmentManager!!)
             tabLayout.setupWithViewPager(viewPager)

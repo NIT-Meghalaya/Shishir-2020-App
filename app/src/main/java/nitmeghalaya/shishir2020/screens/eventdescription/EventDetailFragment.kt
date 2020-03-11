@@ -13,9 +13,8 @@ import coil.api.load
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.fragment_event_detail.view.*
 import nitmeghalaya.shishir2020.R
-import nitmeghalaya.shishir2020.screens.BaseFragment
 
-class EventDetailFragment : BaseFragment(){
+class EventDetailFragment : Fragment(){
 
 //    private val args: EventDetailFragmentArgs by navArgs()
 
@@ -26,7 +25,6 @@ class EventDetailFragment : BaseFragment(){
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_event_detail, container, false)
-        hideLoadingAnimation()
         view.apply {
             viewPager.adapter = EventDescriptionPagerAdapter(args.event, childFragmentManager)
             tabLayout.setupWithViewPager(viewPager)
