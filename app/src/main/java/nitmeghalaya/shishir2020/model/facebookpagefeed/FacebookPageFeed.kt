@@ -9,5 +9,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 class FacebookPageFeed(
     val data: List<FacebookPageFeedItem> = listOf(),
-    val paging: FacebookPageFeedPaginationCursorWrapper = FacebookPageFeedPaginationCursorWrapper()
+    val paging: FacebookPageFeedPaginationCursor = FacebookPageFeedPaginationCursor()
 )

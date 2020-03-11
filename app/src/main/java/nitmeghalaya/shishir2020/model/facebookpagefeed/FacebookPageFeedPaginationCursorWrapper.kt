@@ -7,9 +7,11 @@ import com.squareup.moshi.JsonClass
  */
 
 @JsonClass(generateAdapter = true)
-class FacebookPageFeedPaginationCursorWrapper(
-    val cursors: FacebookPageFeedPaginationCursor = FacebookPageFeedPaginationCursor()
+class FacebookPageFeedPaginationCursor(
+    val cursors: FacebookPageFeedPaginationCursorItem = FacebookPageFeedPaginationCursorItem(),
+    val next: String = "",
+    val previous: String = ""
 )
 
 @JsonClass(generateAdapter = true)
-class FacebookPageFeedPaginationCursor(val before: String = "", val after: String = "")
+class FacebookPageFeedPaginationCursorItem(val before: String = "", val after: String = "")

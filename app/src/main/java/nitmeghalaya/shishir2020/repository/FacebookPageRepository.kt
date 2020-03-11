@@ -39,8 +39,11 @@ class FacebookPageRepository {
         return pageFeedStringLiveData
     }
 
-    fun getPageFeedCallback(accessToken: String): Call<FacebookPageFeed> {
-        return facebookPageApiService.getPageFeed(accessToken, FacebookPageFeedItem.getAllProperties())
+    fun getPageFeedCallback(accessToken: String,
+                            fields: String = FacebookPageFeedItem.getAllProperties(),
+                            after: String? = null,
+                            before: String? = null): Call<FacebookPageFeed> {
+        return facebookPageApiService.getPageFeed(accessToken, fields, after, before)
     }
 
 }
