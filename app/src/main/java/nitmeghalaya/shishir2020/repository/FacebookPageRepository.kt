@@ -21,21 +21,29 @@ class FacebookPageRepository {
         RetrofitService.createService(FacebookPageApiService::class.java)
     }
 
-    fun getPageFeed(accessToken: String): LiveData<FacebookPageFeed> {
+    fun getPageFeedLiveData(accessToken: String): LiveData<FacebookPageFeed> {
         val pageFeedStringLiveData = MutableLiveData<FacebookPageFeed>()
 
-        facebookPageApiService.getPageFeed(accessToken, FacebookPageFeedItem.getAllProperties())
-            .enqueue(object : Callback<FacebookPageFeed> {
-                override fun onFailure(call: Call<FacebookPageFeed>, t: Throwable) {
-                    Timber.e("Failure: " + t.localizedMessage)
-                }
+        getPageFeedCallback(accessToken).enqueue(object : Callback<FacebookPageFeed> {
 
-                override fun onResponse(call: Call<FacebookPageFeed>, response: Response<FacebookPageFeed>) {
-                    pageFeedStringLiveData.value = response.body()
-                    Timber.i(response.body().toString())
-                }
-            })
+            override fun onFailure(call: Call<FacebookPageFeed>, t: Throwable) {
+                Timber.e("Failure: " + t.localizedMessage)
+            }
+
+            override fun onResponse(call: Call<FacebookPageFeed>, response: Response<FacebookPageFeed>) {
+                pageFeedStringLiveData.value = response.body()
+                Timber.i(response.body().toString())
+            }
+        })
 
         return pageFeedStringLiveData
     }
+
+    fun getPageFeedCallback(accessToken: String,
+                            fields: String = FacebookPageFeedItem.getAllProperties(),
+                            after: String? = null,
+                            before: String? = null): Call<FacebookPageFeed> {
+        return facebookPageApiService.getPageFeed(accessToken, fields, after, before)
+    }
+
 }
