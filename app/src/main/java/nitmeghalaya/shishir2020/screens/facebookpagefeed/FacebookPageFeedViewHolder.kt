@@ -12,7 +12,8 @@ import nitmeghalaya.shishir2020.screens.BaseViewHolder
  * Created by Devansh on 8/3/20
  */
 
-class FacebookPageFeedViewHolder(itemView: View, private val viewModel: FacebookPageFeedViewModel)
+class FacebookPageFeedViewHolder(itemView: View, private val viewModel: FacebookPageFeedViewModel,
+                                 private val itemClickListener: FacebookFeedItemClickListener)
     : BaseViewHolder<FacebookPageFeedItem>(itemView) {
 
     override fun bind(item: FacebookPageFeedItem) {
@@ -29,6 +30,10 @@ class FacebookPageFeedViewHolder(itemView: View, private val viewModel: Facebook
                 }
             } else {
                 feedItemImage.visibility = View.GONE
+            }
+
+            openExternalButton.setOnClickListener {
+                itemClickListener.openUrlExternally(item.permalinkUrl)
             }
         }
     }

@@ -18,7 +18,8 @@ data class FacebookPageFeedItem(
 ) {
 
     companion object {
-        fun getAllProperties(): String = "id,message,full_picture,created_time"
+        fun getAllProperties(): String =
+            "id,message,full_picture,created_time,permalink_url,attachments{media_type}"
     }
 
     fun getMediaType() = attachments.data[0].mediaType

@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.fragment_facebook_page_feed.view.*
 import nitmeghalaya.shishir2020.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class FacebookPageFeedFragment : Fragment() {
+class FacebookPageFeedFragment : Fragment(), FacebookFeedItemClickListener {
 
     private val facebookPageFeedViewModel: FacebookPageFeedViewModel by viewModel()
 
@@ -22,12 +22,20 @@ class FacebookPageFeedFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val adapter = FacebookPageFeedRecyclerViewAdapter(facebookPageFeedViewModel)
+        val adapter = FacebookPageFeedRecyclerViewAdapter(facebookPageFeedViewModel, this)
         view.recyclerView.adapter = adapter
 
         facebookPageFeedViewModel.pageFeedItemPagedList.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
 
         })
+    }
+
+    override fun openUrlExternally(url: String) {
+        startActivity(facebookPageFeedViewModel.getExternalLinkIntent(url))
+    }
+
+    override fun shareFeedItem() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

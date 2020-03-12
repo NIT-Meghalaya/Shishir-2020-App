@@ -5,18 +5,25 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_6sdp">
+    android:layout_margin="@dimen/_8sdp"
+    app:cardElevation="@dimen/_8sdp"
+    android:outlineSpotShadowColor="@color/colorAccent"
+    android:outlineAmbientShadowColor="@color/colorAccent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/feed_card_text_margin"
+        android:background="@color/colorPrimary">
 
         <TextView
             android:id="@+id/timeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/feed_card_text_margin"
             android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@id/messageTV"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
@@ -24,17 +31,36 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/lorem"/>
 
+        <ImageView
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share"
+            android:layout_marginEnd="@dimen/feed_card_text_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/messageTV"/>
+
+        <ImageView
+            android:id="@+id/openExternalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_external_link"
+            android:layout_marginEnd="@dimen/feed_card_text_margin"
+            app:layout_constraintEnd_toStartOf="@id/shareButton"
+            app:layout_constraintBottom_toTopOf="@id/messageTV"/>
+
         <TextView
             android:id="@+id/messageTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/_10sdp"
             android:autoLink="all"
+            android:textColor="@android:color/black"
             app:layout_constraintBottom_toTopOf="@id/feedItemImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/timeTV"
-            tools:text="@tools:sample/lorem/random" />
+            tools:text="@tools:sample/lorem" />
 
         <ImageView
             android:id="@+id/feedItemImage"
@@ -48,6 +74,5 @@
             tools:src="@tools:sample/backgrounds/scenic"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </com.google.android.material.card.MaterialCardView>
