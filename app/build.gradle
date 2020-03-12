@@ -116,6 +116,9 @@ dependencies {
 
     //Coil image loader
     implementation "io.coil-kt:coil:0.9.5"
+    
+    //scroll view
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
 
     //Paging Jetpack Library
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"

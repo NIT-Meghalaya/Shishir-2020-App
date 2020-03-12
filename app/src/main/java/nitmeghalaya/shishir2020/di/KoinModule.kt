@@ -5,6 +5,8 @@ import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import nitmeghalaya.shishir2020.screens.eventslist.EventsListViewModel
 import nitmeghalaya.shishir2020.screens.facebookpagefeed.FacebookPageFeedViewModel
+import nitmeghalaya.shishir2020.screens.teammembers.TeamMembersViewModel
+import nitmeghalaya.shishir2020.screens.teams.TeamsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -27,4 +29,6 @@ val facebookPageFeedDataSourceFactory = module {
 val appModule = module {
     viewModel { FacebookPageFeedViewModel(get()) }
     viewModel { EventsListViewModel(get()) }
+    viewModel { TeamsViewModel(get()) }
+    viewModel { TeamMembersViewModel() }
 }

@@ -83,35 +83,37 @@
                 android:id="@+id/btnEmail"
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:background="@color/transparent"
+                android:background="@color/black"
                 app:srcCompat="@drawable/ic_email" />
 
             <ImageView
                 android:id="@+id/btnWebsite"
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:background="@color/transparent"
+                android:background="@color/black"
+                android:contentDescription="ButtonForWebsite"
                 app:srcCompat="@drawable/ic_www" />
 
             <ImageView
                 android:id="@+id/btnFacebook"
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:background="@color/transparent"
+                android:background="@color/black"
+                android:contentDescription="ButtonForFacebook"
                 app:srcCompat="@drawable/ic_facebook" />
 
             <ImageView
                 android:id="@+id/btnInstagram"
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:background="@color/transparent"
+                android:background="@color/black"
                 app:srcCompat="@drawable/ic_instagram" />
 
             <ImageView
                 android:id="@+id/btnShare"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_23sdp"
-                android:background="@color/transparent"
+                android:background="@color/black"
                 android:layout_gravity="center_vertical"
                 app:srcCompat="@drawable/ic_share" />
 

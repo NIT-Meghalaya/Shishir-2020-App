@@ -26,4 +26,6 @@ class FirestoreRepository {
 
     fun getTeamMembers(teamName: String) = db.collection(TEAMS).document(teamName).get()
 
+    fun getTeams() = db.collection(TEAMS).get() //added by HNY
+
 }
