@@ -2,4 +2,5 @@
 <resources>
     <dimen name="card_margin">@dimen/_16sdp</dimen>
     <dimen name="actionBarSize">@dimen/_45sdp</dimen>
+    <dimen name="feed_card_text_margin">@dimen/_10sdp</dimen>
 </resources>

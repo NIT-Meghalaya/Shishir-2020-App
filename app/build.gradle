@@ -40,6 +40,7 @@ dependencies {
     def splitties_version = '3.0.0-alpha06'
     def retrofit_version = '2.7.2'
     def moshi_version = '1.9.2'
+    def paging_version = '2.1.1'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -100,7 +101,7 @@ dependencies {
     //ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
-    //Safargs
+    //SafeArgs
     implementation 'com.airbnb.android:lottie:3.3.1'
 
     //Retrofit
@@ -115,6 +116,10 @@ dependencies {
 
     //Coil image loader
     implementation "io.coil-kt:coil:0.9.5"
+    
+    //scroll view
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
 
-
+    //Paging Jetpack Library
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 }

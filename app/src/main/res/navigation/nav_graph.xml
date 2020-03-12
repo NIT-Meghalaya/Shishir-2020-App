@@ -30,7 +30,7 @@
         android:id="@+id/shishirPageFeedFragment"
         android:name="nitmeghalaya.shishir2020.screens.facebookpagefeed.FacebookPageFeedFragment"
         android:label="@string/feed"
-        tools:layout="@layout/fragment_shishir_page_feed" >
+        tools:layout="@layout/fragment_facebook_page_feed" >
         <action
             android:id="@+id/action_shishirPageFeedFragment_to_teamsListFragment"
             app:destination="@id/teamsListFragment" />
@@ -39,13 +39,13 @@
         android:id="@+id/teamsListFragment"
         android:name="nitmeghalaya.shishir2020.screens.teams.TeamsListFragment"
         android:label="@string/team"
-        tools:layout="@layout/fragment_teams_list" >
+        tools:layout="@layout/item_teams_list" >
         <action
             android:id="@+id/action_teamsListFragment_to_contactFragment"
             app:destination="@id/contactFragment" />
         <action
-            android:id="@+id/action_teamsListFragment_to_sponsorFragment"
-            app:destination="@id/sponsorFragment" />
+            android:id="@+id/action_teamsListFragment_to_teamMembersFragment"
+            app:destination="@id/teamMembersFragment" />
     </fragment>
     <fragment
         android:id="@+id/contactFragment"
@@ -71,7 +71,12 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/sponsorFragment"
-        android:name="nitmeghalaya.shishir2020.screens.sponsors.SponsorFragment"
-        android:label="SponsorFragment" />
+        android:id="@+id/teamMembersFragment"
+        android:name="nitmeghalaya.shishir2020.screens.teammembers.TeamMembersFragment"
+        android:label="TeamMembersFragment" >
+        <argument
+            android:name="teamJson"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
 </navigation>
