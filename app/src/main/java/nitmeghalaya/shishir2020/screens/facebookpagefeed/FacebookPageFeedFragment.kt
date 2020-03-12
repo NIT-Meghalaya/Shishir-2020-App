@@ -22,7 +22,7 @@ class FacebookPageFeedFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val adapter = FacebookPageFeedRecyclerViewAdapter()
+        val adapter = FacebookPageFeedRecyclerViewAdapter(facebookPageFeedViewModel)
         view.recyclerView.adapter = adapter
 
         facebookPageFeedViewModel.pageFeedItemPagedList.observe(viewLifecycleOwner, Observer {

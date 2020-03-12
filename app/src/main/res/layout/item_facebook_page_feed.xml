@@ -12,7 +12,7 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/dateTv"
+            android:id="@+id/timeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/_10sdp"
@@ -33,7 +33,7 @@
             app:layout_constraintBottom_toTopOf="@id/feedItemImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dateTv"
+            app:layout_constraintTop_toBottomOf="@id/timeTV"
             tools:text="@tools:sample/lorem/random" />
 
         <ImageView
