@@ -1,4 +1,4 @@
-package nitmeghalaya.shishir2020.model.facebookpagefeed
+    package nitmeghalaya.shishir2020.model.facebookpagefeed
 
 import com.squareup.moshi.JsonClass
 

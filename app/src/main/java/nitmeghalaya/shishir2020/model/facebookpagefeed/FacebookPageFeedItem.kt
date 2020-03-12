@@ -1,6 +1,8 @@
 package nitmeghalaya.shishir2020.model.facebookpagefeed
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
 //import com.squareup.moshi.JsonClass
 
 /**
