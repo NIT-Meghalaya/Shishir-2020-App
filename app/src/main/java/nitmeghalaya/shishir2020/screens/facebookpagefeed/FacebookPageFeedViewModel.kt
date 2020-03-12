@@ -2,6 +2,7 @@ package nitmeghalaya.shishir2020.screens.facebookpagefeed
 
 import android.content.Intent
 import android.net.Uri
+import android.text.format.DateUtils
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
@@ -29,9 +30,15 @@ class FacebookPageFeedViewModel(private val facebookPageFeedDataSourceFactory: F
         pageFeedItemPagedList = LivePagedListBuilder(facebookPageFeedDataSourceFactory, pagedListConfig).build()
     }
 
-    fun getDateFromISO8601String(dateString: String): Date =
-        SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+    fun getRelativeDateFromISO8601String(dateString: String): CharSequence {
+        val date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
             .parse(dateString.split("+", ignoreCase = true)[0]) ?: Date()
+
+        val istIncrement = 19800000L
+        val s = DateUtils.getRelativeTimeSpanString(date.time + istIncrement, Date().time,
+            DateUtils.MINUTE_IN_MILLIS, DateUtils.FORMAT_ABBREV_RELATIVE)
+        return s
+    }
 
     fun getExternalLinkIntent(url: String): Intent {
         val intent = Intent(Intent.ACTION_VIEW)

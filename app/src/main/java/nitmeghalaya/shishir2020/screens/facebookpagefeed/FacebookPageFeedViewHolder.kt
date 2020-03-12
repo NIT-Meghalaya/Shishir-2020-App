@@ -1,6 +1,5 @@
 package nitmeghalaya.shishir2020.screens.facebookpagefeed
 
-import android.text.format.DateUtils
 import android.view.View
 import coil.api.load
 import kotlinx.android.synthetic.main.item_facebook_page_feed.view.*
@@ -20,8 +19,7 @@ class FacebookPageFeedViewHolder(itemView: View, private val viewModel: Facebook
         itemView.apply {
             messageTV.text = item.message
 
-            val createdTimeEpoch = viewModel.getDateFromISO8601String(item.createdTime).time
-            timeTV.text = DateUtils.getRelativeTimeSpanString(createdTimeEpoch)
+            timeTV.text = viewModel.getRelativeDateFromISO8601String(item.createdTime)
 
             if (item.fullPictureUrl.isNotEmpty()) {
                 feedItemImage.visibility = View.VISIBLE
