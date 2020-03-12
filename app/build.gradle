@@ -115,4 +115,6 @@ dependencies {
 
     //Coil image loader
     implementation "io.coil-kt:coil:0.9.5"
+    //scroll view
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
 }

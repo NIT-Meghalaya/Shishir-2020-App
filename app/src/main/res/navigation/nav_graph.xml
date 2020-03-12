@@ -39,10 +39,13 @@
         android:id="@+id/teamsListFragment"
         android:name="nitmeghalaya.shishir2020.screens.teams.TeamsListFragment"
         android:label="@string/team"
-        tools:layout="@layout/fragment_teams_list" >
+        tools:layout="@layout/item_teams_list" >
         <action
             android:id="@+id/action_teamsListFragment_to_contactFragment"
             app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_teamsListFragment_to_teamMembersFragment"
+            app:destination="@id/teamMembersFragment" />
     </fragment>
     <fragment
         android:id="@+id/contactFragment"
@@ -66,5 +69,14 @@
         <argument
             android:name="registrationLink"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamMembersFragment"
+        android:name="nitmeghalaya.shishir2020.screens.teammembers.TeamMembersFragment"
+        android:label="TeamMembersFragment" >
+        <argument
+            android:name="teamJson"
+            app:argType="string"
+            android:defaultValue='""' />
     </fragment>
 </navigation>
