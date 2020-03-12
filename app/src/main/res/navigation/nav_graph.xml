@@ -44,8 +44,8 @@
             android:id="@+id/action_teamsListFragment_to_contactFragment"
             app:destination="@id/contactFragment" />
         <action
-            android:id="@+id/action_teamsListFragment_to_sponsorListFragment"
-            app:destination="@id/sponsorListFragment" />
+            android:id="@+id/action_teamsListFragment_to_sponsorFragment"
+            app:destination="@id/sponsorFragment" />
     </fragment>
     <fragment
         android:id="@+id/contactFragment"
@@ -71,8 +71,7 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/sponsorListFragment"
-        android:name="nitmeghalaya.shishir2020.screens.sponsors.SponsorListFragment"
-        android:label="fragment_sponsor_list"
-        tools:layout="@layout/fragment_sponsor_list" />
+        android:id="@+id/sponsorFragment"
+        android:name="nitmeghalaya.shishir2020.screens.sponsors.SponsorFragment"
+        android:label="SponsorFragment" />
 </navigation>

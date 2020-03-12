@@ -15,6 +15,7 @@ class FirestoreRepository {
         private const val COLLECTION_FACEBOOK_ACCESS_TOKEN_CREATOR = "facebookAccessTokenCreators"
         private const val COLLECTION_EVENTS = "events"
         private const val TEAMS="teams"
+        private const val SPONSORS="sponsors"
     }
 
     fun getFacebookAccessTokenCreator(documentId: String) =
@@ -23,5 +24,8 @@ class FirestoreRepository {
     fun getAllEventsList() = db.collection(COLLECTION_EVENTS).get()
 
     fun getTeamMembers(teamName: String) = db.collection(TEAMS).document(teamName).get()
+
+    fun getSponsors() = db.collection("newSponsors").document("sponsors").get()
+
 
 }

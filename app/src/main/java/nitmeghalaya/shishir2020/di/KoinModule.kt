@@ -4,8 +4,9 @@ import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import nitmeghalaya.shishir2020.screens.eventdescription.team.EventDetailTeamViewModel
 import nitmeghalaya.shishir2020.screens.eventslist.EventsListViewModel
-import nitmeghalaya.shishir2020.screens.facebookpagefeed.FacebookPageFeedViewModel
 import nitmeghalaya.shishir2020.screens.eventsschedule.EventsScheduleViewModel
+import nitmeghalaya.shishir2020.screens.facebookpagefeed.FacebookPageFeedViewModel
+import nitmeghalaya.shishir2020.screens.sponsors.SponsorViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -26,4 +27,5 @@ val appModule = module {
     viewModel { EventsListViewModel(get()) }
     viewModel { EventsScheduleViewModel() }
     viewModel { EventDetailTeamViewModel(get()) }
+    viewModel { SponsorViewModel(get()) }
 }

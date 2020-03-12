@@ -33,7 +33,7 @@
         android:icon="@android:drawable/ic_dialog_map" />
 
     <item
-        android:id="@+id/sponsorListFragment"
+        android:id="@+id/sponsorFragment"
         android:title="@string/sponsors"
         app:showAsAction="always"
         android:orderInCategory="5"
