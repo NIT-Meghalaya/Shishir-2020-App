@@ -1,5 +1,6 @@
 package nitmeghalaya.shishir2020.screens.facebookpagefeed
 
+import android.text.format.DateUtils
 import android.view.View
 import coil.api.load
 import kotlinx.android.synthetic.main.item_facebook_page_feed.view.*
@@ -11,11 +12,16 @@ import nitmeghalaya.shishir2020.screens.BaseViewHolder
  * Created by Devansh on 8/3/20
  */
 
-class FacebookPageFeedViewHolder(itemView: View): BaseViewHolder<FacebookPageFeedItem>(itemView) {
+class FacebookPageFeedViewHolder(itemView: View, private val viewModel: FacebookPageFeedViewModel,
+                                 private val itemClickListener: FacebookFeedItemClickListener)
+    : BaseViewHolder<FacebookPageFeedItem>(itemView) {
 
     override fun bind(item: FacebookPageFeedItem) {
         itemView.apply {
             messageTV.text = item.message
+
+            val createdTimeEpoch = viewModel.getDateFromISO8601String(item.createdTime).time
+            timeTV.text = DateUtils.getRelativeTimeSpanString(createdTimeEpoch)
 
             if (item.fullPictureUrl.isNotEmpty()) {
                 feedItemImage.visibility = View.VISIBLE
@@ -24,6 +30,10 @@ class FacebookPageFeedViewHolder(itemView: View): BaseViewHolder<FacebookPageFee
                 }
             } else {
                 feedItemImage.visibility = View.GONE
+            }
+
+            openExternalButton.setOnClickListener {
+                itemClickListener.openUrlExternally(item.permalinkUrl)
             }
         }
     }

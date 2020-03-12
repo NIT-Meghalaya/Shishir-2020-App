@@ -11,12 +11,13 @@ import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeedItem
  * Created by Devansh on 8/3/20
  */
 
-class FacebookPageFeedRecyclerViewAdapter
+class FacebookPageFeedRecyclerViewAdapter(private val viewModel: FacebookPageFeedViewModel,
+                                          private val itemClickListener: FacebookFeedItemClickListener)
     : PagedListAdapter<FacebookPageFeedItem, FacebookPageFeedViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FacebookPageFeedViewHolder =
         FacebookPageFeedViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_facebook_page_feed, parent, false))
+            .inflate(R.layout.item_facebook_page_feed, parent, false), viewModel, itemClickListener)
 
     override fun onBindViewHolder(holder: FacebookPageFeedViewHolder, position: Int) {
         holder.bind(getItem(position) ?: FacebookPageFeedItem())

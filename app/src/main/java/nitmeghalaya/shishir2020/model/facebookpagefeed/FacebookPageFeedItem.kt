@@ -8,17 +8,18 @@ import com.squareup.moshi.JsonClass
  */
 
 @JsonClass(generateAdapter = true)
-class FacebookPageFeedItem(
+data class FacebookPageFeedItem(
     val id: String = "",
     val message: String = "",
     @Json(name = "full_picture") val fullPictureUrl: String = "",
     @Json(name = "created_time") val createdTime: String = "",
     @Json(name = "permalink_url") val permalinkUrl: String = "",
-    private val attachments: FacebookFeedItemAttachments = FacebookFeedItemAttachments()
+    val attachments: FacebookFeedItemAttachments = FacebookFeedItemAttachments()
 ) {
 
     companion object {
-        fun getAllProperties(): String = "id,message,full_picture,created_time"
+        fun getAllProperties(): String =
+            "id,message,full_picture,created_time,permalink_url,attachments{media_type}"
     }
 
     fun getMediaType() = attachments.data[0].mediaType
@@ -33,6 +34,8 @@ class FacebookPageFeedItem(
         if (message != other.message) return false
         if (fullPictureUrl != other.fullPictureUrl) return false
         if (createdTime != other.createdTime) return false
+        if (permalinkUrl != other.permalinkUrl) return false
+        if (attachments != other.attachments) return false
 
         return true
     }
@@ -42,6 +45,8 @@ class FacebookPageFeedItem(
         result = 31 * result + message.hashCode()
         result = 31 * result + fullPictureUrl.hashCode()
         result = 31 * result + createdTime.hashCode()
+        result = 31 * result + permalinkUrl.hashCode()
+        result = 31 * result + attachments.hashCode()
         return result
     }
 
