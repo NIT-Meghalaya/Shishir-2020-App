@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import kotlinx.android.synthetic.main.fragment_shishir_page_feed.*
+import kotlinx.android.synthetic.main.fragment_facebook_page_feed.view.*
 import nitmeghalaya.shishir2020.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class FacebookPageFeedFragment : Fragment() {
+class FacebookPageFeedFragment : Fragment(), FacebookFeedItemClickListener {
 
     private val facebookPageFeedViewModel: FacebookPageFeedViewModel by viewModel()
 
@@ -18,14 +18,24 @@ class FacebookPageFeedFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_shishir_page_feed, container, false)
+        return inflater.inflate(R.layout.fragment_facebook_page_feed, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        facebookPageFeedViewModel.getFacebookAccessToken().observe(viewLifecycleOwner, Observer {
-            facebookPageFeedViewModel.getPageFeed(it.accessToken).observe(viewLifecycleOwner, Observer { feedData ->
-                recyclerView.adapter = FacebookPageFeedRecyclerViewAdapter(feedData.data)
-            })
+        val adapter = FacebookPageFeedRecyclerViewAdapter(facebookPageFeedViewModel, this)
+        view.recyclerView.adapter = adapter
+
+        facebookPageFeedViewModel.pageFeedItemPagedList.observe(viewLifecycleOwner, Observer {
+            adapter.submitList(it)
+
         })
+    }
+
+    override fun openUrlExternally(url: String) {
+        startActivity(facebookPageFeedViewModel.getExternalLinkIntent(url))
+    }
+
+    override fun shareFeedItem() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

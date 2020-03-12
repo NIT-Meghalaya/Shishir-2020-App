@@ -15,6 +15,8 @@ class FirestoreRepository {
         private const val COLLECTION_FACEBOOK_ACCESS_TOKEN_CREATOR = "facebookAccessTokenCreators"
         private const val COLLECTION_EVENTS = "events"
         private const val TEAMS="teams"
+
+        const val SHISHIR_PAGE = "shishirPage"
     }
 
     fun getFacebookAccessTokenCreator(documentId: String) =

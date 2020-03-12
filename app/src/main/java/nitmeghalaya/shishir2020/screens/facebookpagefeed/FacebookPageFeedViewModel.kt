@@ -1,37 +1,41 @@
 package nitmeghalaya.shishir2020.screens.facebookpagefeed
 
+import android.content.Intent
+import android.net.Uri
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.firebase.firestore.ktx.toObject
-import nitmeghalaya.shishir2020.model.AccessToken
-import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeed
-import nitmeghalaya.shishir2020.repository.FacebookPageRepository
-import nitmeghalaya.shishir2020.repository.FirestoreRepository
-import timber.log.Timber
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PagedList
+import nitmeghalaya.shishir2020.datasource.FacebookPageFeedDataSourceFactory
+import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeedItem
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Created by Devansh on 6/3/20
  */
 
-class FacebookPageFeedViewModel(private val firestoreRepository: FirestoreRepository,
-                                private val facebookPageRepository: FacebookPageRepository): ViewModel() {
+class FacebookPageFeedViewModel(private val facebookPageFeedDataSourceFactory: FacebookPageFeedDataSourceFactory)
+    : ViewModel() {
 
+    val pageFeedItemPagedList: LiveData<PagedList<FacebookPageFeedItem>>
 
-    fun getPageFeed(accessToken: String): LiveData<FacebookPageFeed> {
-        return facebookPageRepository.getPageFeed(accessToken)
+    init {
+        val pagedListConfig = PagedList.Config.Builder()
+            .setEnablePlaceholders(false)
+            .setPageSize(15)
+            .build()
+
+        pageFeedItemPagedList = LivePagedListBuilder(facebookPageFeedDataSourceFactory, pagedListConfig).build()
     }
 
-    fun getFacebookAccessToken(): LiveData<AccessToken> {
-        val accessTokenLiveData = MutableLiveData<AccessToken>()
+    fun getDateFromISO8601String(dateString: String): Date =
+        SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+            .parse(dateString.split("+", ignoreCase = true)[0]) ?: Date()
 
-        firestoreRepository.getFacebookAccessTokenCreator("shishirPage")
-            .addOnSuccessListener {
-                accessTokenLiveData.value = it.toObject<AccessToken>()
-            }.addOnFailureListener {
-                Timber.e("Failed to get access token")
-            }
-
-        return accessTokenLiveData
+    fun getExternalLinkIntent(url: String): Intent {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        return intent
     }
 }
