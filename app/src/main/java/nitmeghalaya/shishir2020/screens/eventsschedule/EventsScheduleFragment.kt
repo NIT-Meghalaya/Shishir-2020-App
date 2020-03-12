@@ -19,10 +19,10 @@ class EventsScheduleFragment : Fragment() {
         // Inflate the layout for this fragment
 
         val view = inflater.inflate(R.layout.fragment_event_schedule, container, false)
-        (activity as MainActivity).supportActionBar?.title = "Schedule"
+      (activity as MainActivity).supportActionBar?.title = "Schedule"
         view.apply {
-//            viewPager.adapter = SchedulePagerAdapter(fragmentManager!!)
-//            tabLayout.setupWithViewPager(viewPager)
+            viewPager.adapter = EventSchedulePageAdapter(fragmentManager!!)
+            tabLayout.setupWithViewPager(viewPager)
         }
         return view
     }

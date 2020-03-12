@@ -12,25 +12,23 @@ class EventDescriptionPagerAdapter(shishirEventJson: String, fm: FragmentManager
 
     override fun getItem(position: Int): Fragment {
         val fragment = when (position) {
-            0 -> EventDetailItemFragment.newInstance(
-                ShishirEvent.DESCRIPTION,
-                shishirEvent.description
-            )
+            0 -> EventDetailItemFragment.newInstance(ShishirEvent.DESCRIPTION, shishirEvent.description)
             1 -> EventDetailItemFragment.newInstance(ShishirEvent.RULES, shishirEvent.rules)
             2 -> EventDetailItemFragment.newInstance(ShishirEvent.JUDGING, shishirEvent.judging)
-            3 -> EventDetailTeamFragment.newInstance(shishirEvent.team)
-            else -> EventDetailTeamFragment()
+            3 -> {
+                EventDetailTeamFragment.newInstance(shishirEvent.team)
+            }else -> EventDetailTeamFragment()
         }
         return fragment
     }
-    override fun getCount(): Int = 3
+    override fun getCount(): Int = 4
 
     override fun getPageTitle(position: Int): CharSequence? =
-        when(position){
+        when (position) {
             0 -> ShishirEvent.DESCRIPTION
-            1-> ShishirEvent.RULES
-            2-> ShishirEvent.JUDGING
-            3->  ShishirEvent.TEAM
+            1 -> ShishirEvent.RULES
+            2 -> ShishirEvent.JUDGING
+            3 -> ShishirEvent.TEAM
             else -> ""
         }
 
