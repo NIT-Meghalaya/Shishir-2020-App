@@ -33,8 +33,8 @@
         android:icon="@android:drawable/ic_dialog_map" />
 
     <item
-        android:id="@+id/contactFragment"
-        android:title="@string/contact"
+        android:id="@+id/sponsorFragment"
+        android:title="@string/sponsors"
         app:showAsAction="always"
         android:orderInCategory="5"
         android:icon="@android:drawable/ic_dialog_map" />

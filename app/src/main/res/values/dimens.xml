@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="card_margin">@dimen/_16sdp</dimen>
+    <dimen name="actionBarSize">@dimen/_45sdp</dimen>
     <dimen name="feed_card_text_margin">@dimen/_10sdp</dimen>
     <dimen name="share_text_padding">@dimen/_4sdp</dimen>
     <dimen name="share_text_view_height">16sp</dimen>

@@ -15,6 +15,7 @@ class FirestoreRepository {
         private const val COLLECTION_FACEBOOK_ACCESS_TOKEN_CREATOR = "facebookAccessTokenCreators"
         private const val COLLECTION_EVENTS = "events"
         private const val TEAMS="teams"
+        private const val SPONSORS="sponsors"
 
         const val SHISHIR_PAGE = "shishirPage"
     }
@@ -26,6 +27,8 @@ class FirestoreRepository {
 
     fun getTeamMembers(teamName: String) = db.collection(TEAMS).document(teamName).get()
 
-    fun getTeams() = db.collection(TEAMS).get() //added by HNY
+    fun getSponsors() = db.collection("newSponsors").document("sponsors").get()
+
+    fun getTeams() = db.collection(TEAMS).get()
 
 }
