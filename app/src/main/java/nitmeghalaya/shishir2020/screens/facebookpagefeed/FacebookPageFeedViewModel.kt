@@ -13,9 +13,11 @@ import androidx.paging.PagedList
 import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.datasource.FacebookPageFeedDataSourceFactory
 import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeedItem
+import nitmeghalaya.shishir2020.util.dpToPx
 import nitmeghalaya.shishir2020.util.spToPx
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.max
 
 /**
  * Created by Devansh on 6/3/20
@@ -51,8 +53,13 @@ class FacebookPageFeedViewModel(facebookPageFeedDataSourceFactory: FacebookPageF
     }
 
     fun createFeedShareMessageBitmap(attachTo: View): Bitmap {
-        val bitmap = Bitmap.createBitmap(
-            attachTo.width, spToPx(20f, attachTo.context), Bitmap.Config.ARGB_8888)
+        val context = attachTo.context
+
+        val logoBitmap = BitmapFactory.decodeResource(context.resources, R.drawable.ic_app)
+        val height = max(spToPx(24f, context), logoBitmap.height + 8)
+
+        val bitmap = Bitmap.createBitmap(attachTo.width, height, Bitmap.Config.ARGB_8888)
+
         val canvas = Canvas(bitmap)
         val paint = Paint().apply {
             color = ContextCompat.getColor(attachTo.context, R.color.colorPrimary)
@@ -65,9 +72,18 @@ class FacebookPageFeedViewModel(facebookPageFeedDataSourceFactory: FacebookPageF
             isAntiAlias = true
             textSize = spToPx(16f, attachTo.context).toFloat()
             typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
+            textAlign = Paint.Align.LEFT
         }
-        canvas.drawText(attachTo.context.getString(R.string.share_text), 0f, paint.textSize, paint)
 
+        val shareText = context.getString(R.string.share_text)
+        val textBoundsRect = Rect()
+        paint.getTextBounds(shareText, 0, shareText.length, textBoundsRect)
+        val drawStartX = bitmap.width - textBoundsRect.right - dpToPx(8f, context).toFloat()
+        val drawStartY = bitmap.height / 2f + dpToPx(4f, context)
+        canvas.drawText(shareText, drawStartX, drawStartY, paint)
+
+        val logoBitmapRect = Rect(0, 0, logoBitmap.width, logoBitmap.height)
+        canvas.drawBitmap(logoBitmap, null, logoBitmapRect, null)
         return bitmap
     }
 }
