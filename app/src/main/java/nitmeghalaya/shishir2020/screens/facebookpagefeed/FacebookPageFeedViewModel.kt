@@ -61,8 +61,9 @@ class FacebookPageFeedViewModel(facebookPageFeedDataSourceFactory: FacebookPageF
         val bitmap = Bitmap.createBitmap(attachTo.width, height, Bitmap.Config.ARGB_8888)
 
         val canvas = Canvas(bitmap)
+
         val paint = Paint().apply {
-            color = ContextCompat.getColor(attachTo.context, R.color.colorPrimary)
+            color = ContextCompat.getColor(context, R.color.colorPrimary)
             style = Paint.Style.FILL
         }
         canvas.drawPaint(paint)
@@ -70,7 +71,7 @@ class FacebookPageFeedViewModel(facebookPageFeedDataSourceFactory: FacebookPageF
         paint.apply {
             color = Color.BLACK
             isAntiAlias = true
-            textSize = spToPx(16f, attachTo.context).toFloat()
+            textSize = spToPx(16f, context).toFloat()
             typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
             textAlign = Paint.Align.LEFT
         }
