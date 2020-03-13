@@ -122,4 +122,7 @@ dependencies {
 
     //Paging Jetpack Library
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    //BottomNavigationViewEx
+    implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
 }

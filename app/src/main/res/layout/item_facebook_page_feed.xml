@@ -35,19 +35,21 @@
             android:id="@+id/shareButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_share"
             android:layout_marginEnd="@dimen/feed_card_text_margin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/feedItemMainContent"/>
+            android:src="@drawable/ic_share"
+            android:tint="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@id/feedItemMainContent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ImageView
             android:id="@+id/openExternalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_external_link"
             android:layout_marginEnd="@dimen/feed_card_text_margin"
-            app:layout_constraintEnd_toStartOf="@id/shareButton"
-            app:layout_constraintBottom_toTopOf="@id/feedItemMainContent"/>
+            android:src="@drawable/ic_external_link"
+            android:tint="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@id/feedItemMainContent"
+            app:layout_constraintEnd_toStartOf="@id/shareButton" />
 
         <LinearLayout
             android:id="@+id/feedItemMainContent"
