@@ -6,6 +6,9 @@ import kotlinx.android.synthetic.main.item_facebook_page_feed.view.*
 import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.model.facebookpagefeed.FacebookPageFeedItem
 import nitmeghalaya.shishir2020.screens.BaseViewHolder
+import nitmeghalaya.shishir2020.util.appendBelow
+import nitmeghalaya.shishir2020.util.getBitmap
+import nitmeghalaya.shishir2020.util.share
 
 /**
  * Created by Devansh on 8/3/20
@@ -32,6 +35,16 @@ class FacebookPageFeedViewHolder(itemView: View, private val viewModel: Facebook
 
             openExternalButton.setOnClickListener {
                 itemClickListener.openUrlExternally(item.permalinkUrl)
+            }
+
+            shareButton.setOnClickListener {
+                feedItemMainContent.apply {
+                    getBitmap {
+                        val shareMessageBitmap = viewModel.createFeedShareMessageBitmap(this)
+                        val shareBitmap = it.appendBelow(shareMessageBitmap)
+                        shareBitmap.share(context)
+                    }
+                }
             }
         }
     }
