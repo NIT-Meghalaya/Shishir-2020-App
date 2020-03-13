@@ -27,7 +27,8 @@ class FacebookPageFeedViewHolder(itemView: View, private val viewModel: Facebook
             if (item.fullPictureUrl.isNotEmpty()) {
                 feedItemImage.visibility = View.VISIBLE
                 feedItemImage.load(item.fullPictureUrl) {
-                    placeholder(R.drawable.facebook_icon)
+                    crossfade(true)
+                    placeholder(R.mipmap.ic_launcher_foreground)
                 }
             } else {
                 feedItemImage.visibility = View.GONE
