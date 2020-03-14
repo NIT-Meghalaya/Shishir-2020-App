@@ -1,6 +1,8 @@
 package nitmeghalaya.shishir2020
 
 import android.app.Application
+import coil.Coil
+import coil.ImageLoader
 import nitmeghalaya.shishir2020.di.appModule
 import nitmeghalaya.shishir2020.di.facebookPageFeedDataSourceFactory
 import nitmeghalaya.shishir2020.di.facebookPageRepositoryModule
@@ -26,6 +28,15 @@ class ShishirApplication: Application() {
 
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
+        }
+
+        Coil.setDefaultImageLoader {
+            ImageLoader.invoke(applicationContext) {
+                crossfade(true)
+                crossfade(300)
+                placeholder(R.drawable.ic_app_foreground)
+                error(R.drawable.ic_app_foreground)
+            }
         }
     }
 }

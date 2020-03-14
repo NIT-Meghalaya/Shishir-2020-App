@@ -4,10 +4,12 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/imageViewCard"
-    android:translationZ="@dimen/_10sdp"
     app:cardCornerRadius="@dimen/_6sdp"
     app:cardElevation="@dimen/_8sdp"
     android:layout_margin="@dimen/_6sdp"
+    android:outlineSpotShadowColor="@color/colorAccent"
+    android:outlineAmbientShadowColor="@color/colorAccent"
+    app:cardBackgroundColor="@color/colorPrimary"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
@@ -17,6 +19,5 @@
         android:layout_width="@dimen/_200sdp"
         android:layout_height="@dimen/_200sdp"
         android:scaleType="centerCrop"
-        android:translationZ="@dimen/_100sdp"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        android:src="@drawable/ic_app_foreground"/>
 </androidx.cardview.widget.CardView>

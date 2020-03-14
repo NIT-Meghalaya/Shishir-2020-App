@@ -24,8 +24,6 @@ class TeamMembersFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_team_members, container, false)
-        //edit1 by HNY, prev args.teamJson
-
         val teamMembers = viewModel.getTeamMembersList(args.teamJson)
 
         view.apply {

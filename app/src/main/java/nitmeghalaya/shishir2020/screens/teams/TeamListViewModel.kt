@@ -7,11 +7,11 @@ import com.google.firebase.firestore.ktx.toObjects
 import nitmeghalaya.shishir2020.model.ShishirTeam
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 
-
 /**
  * Created by Devansh on 6/3/20
  */
-class TeamsViewModel(private val firestoreRepository: FirestoreRepository): ViewModel() {
+
+class TeamListViewModel(private val firestoreRepository: FirestoreRepository): ViewModel() {
 
     fun getTeams(): LiveData<List<ShishirTeam>> {
         val teamsLiveData = MutableLiveData<List<ShishirTeam>>()

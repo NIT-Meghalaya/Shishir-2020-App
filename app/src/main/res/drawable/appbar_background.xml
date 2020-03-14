@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <size
+        android:width="@dimen/_20sdp"
+        android:height="@dimen/_10sdp" />
+
+    <corners
+        android:bottomLeftRadius="@dimen/main_activity_ui_elements_radius"
+        android:bottomRightRadius="@dimen/main_activity_ui_elements_radius" />
+
+    <solid
+        android:color="@color/colorAccent" />
+
+</shape>
