@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/slideHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STEP UP"
+        style="@style/IntroSliderTitle"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/slideAnimation"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="animation_3.json"
+        android:layout_gravity="center"
+        app:lottie_loop="true" android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp" android:scaleX="2" android:scaleY="2"/>
+
+    <TextView
+        android:id="@+id/slideDescriptiom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:textAlignment="center"
+        android:text="Dance on the random music being played and show your instincts to dance"
+        android:textSize="18sp"
+        android:textColor="#ffffff" />
+
+</LinearLayout>

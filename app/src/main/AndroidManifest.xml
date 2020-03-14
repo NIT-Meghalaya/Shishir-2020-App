@@ -14,13 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".screens.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".screens.introslider.IntroSliderActivity"></activity>
+        <activity
+            android:name=".screens.MainActivity"
+            android:theme="@style/AppTheme"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -32,6 +29,15 @@
                 android:resource="@xml/filepaths" />
         </provider>
 
+        <activity
+            android:name=".screens.splash.SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
