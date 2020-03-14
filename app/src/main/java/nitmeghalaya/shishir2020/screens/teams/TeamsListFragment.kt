@@ -23,7 +23,7 @@ class TeamsListFragment : Fragment() {
 
 //        showLoadingAnimation()
         viewModel.getTeams().observe(this, Observer {
-            view.recyclerView.adapter = TeamsRecyclerViewAdapter(it)
+            view.recyclerView.adapter = TeamListRecyclerViewAdapter(it)
 
 //            hideLoadingAnimation()
         })

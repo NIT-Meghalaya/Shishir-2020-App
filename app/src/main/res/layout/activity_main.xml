@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/appbar_background"
         android:elevation="@dimen/_10sdp"
+        app:titleTextColor="@color/white"
         android:outlineSpotShadowColor="@color/colorAccent"
         android:outlineAmbientShadowColor="@color/colorAccent"
         app:layout_constraintStart_toStartOf="parent"
