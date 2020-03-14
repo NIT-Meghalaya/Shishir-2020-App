@@ -3,6 +3,7 @@ package nitmeghalaya.shishir2020.model
 import com.google.firebase.firestore.PropertyName
 
 class ShishirTeam(
+
     @PropertyName("Co-Coordinator")
     @get:PropertyName("Co-Coordinator")
     val cocoordinators: ArrayList<TeamMember> = arrayListOf(),

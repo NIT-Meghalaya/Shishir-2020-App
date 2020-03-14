@@ -24,7 +24,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@id/messageTV"
+            app:layout_constraintBottom_toTopOf="@id/feedItemMainContent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
             android:src="@drawable/ic_share"
             android:layout_marginEnd="@dimen/feed_card_text_margin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/messageTV"/>
+            app:layout_constraintBottom_toTopOf="@id/feedItemMainContent"/>
 
         <ImageView
             android:id="@+id/openExternalButton"
@@ -47,32 +47,31 @@
             android:src="@drawable/ic_external_link"
             android:layout_marginEnd="@dimen/feed_card_text_margin"
             app:layout_constraintEnd_toStartOf="@id/shareButton"
-            app:layout_constraintBottom_toTopOf="@id/messageTV"/>
+            app:layout_constraintBottom_toTopOf="@id/feedItemMainContent"/>
 
-        <TextView
-            android:id="@+id/messageTV"
+        <LinearLayout
+            android:id="@+id/feedItemMainContent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
-            android:autoLink="all"
-            android:textColor="@android:color/black"
-            app:layout_constraintBottom_toTopOf="@id/feedItemImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/timeTV"
-            tools:text="@tools:sample/lorem" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/timeTV">
 
-        <ImageView
-            android:id="@+id/feedItemImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/messageTV"
-            tools:src="@tools:sample/backgrounds/scenic"/>
+            <TextView
+                android:id="@+id/messageTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:autoLink="all"
+                android:textColor="@android:color/black"
+                tools:text="@tools:sample/lorem" />
 
+            <ImageView
+                android:id="@+id/feedItemImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                tools:src="@tools:sample/backgrounds/scenic"/>
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

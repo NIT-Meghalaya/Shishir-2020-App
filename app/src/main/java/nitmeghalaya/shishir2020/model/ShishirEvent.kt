@@ -15,7 +15,7 @@ data class ShishirEvent(
     companion object{
         const val DESCRIPTION = "Description"
         const val RULES="Rules"
-        const val TEAM="team"
+        const val TEAM="Team"
         const val JUDGING="Judging"
     }
 }
