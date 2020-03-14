@@ -19,14 +19,14 @@ class TeamListViewHolder(itemView: View): BaseViewHolder<ShishirTeam>(itemView) 
                     topLeft = cornerRadius, bottomLeft = cornerRadius))
             }
 
-
             teamNameTV.text = item.team
 
             setOnClickListener {
                 val action = TeamsListFragmentDirections
-                    .actionTeamsListFragmentToTeamMembersFragment(item.toJson<ShishirTeam>())
+                    .actionTeamsListFragmentToTeamMembersFragment(item.toJson<ShishirTeam>(), item.team)
                 findNavController().navigate(action)
             }
         }
     }
+
 }

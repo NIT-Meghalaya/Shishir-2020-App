@@ -73,7 +73,7 @@
     <fragment
         android:id="@+id/teamMembersFragment"
         android:name="nitmeghalaya.shishir2020.screens.teammembers.TeamMembersFragment"
-        android:label="TeamMembersFragment" >
+        android:label="{teamName}" >
         <argument
             android:name="teamJson"
             app:argType="string"
@@ -81,6 +81,10 @@
         <action
             android:id="@+id/action_teamMembersFragment_to_teamsListFragment"
             app:destination="@id/teamsListFragment" />
+        <argument
+            android:name="teamName"
+            app:argType="string"
+            android:defaultValue='""' />
     </fragment>
     <fragment
         android:id="@+id/sponsorFragment"

@@ -12,7 +12,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TeamsListFragment : Fragment() {
 
-    private val viewModel: TeamsViewModel by viewModel()
+    private val viewModel: TeamListViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
