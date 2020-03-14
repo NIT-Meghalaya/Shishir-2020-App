@@ -1,5 +1,6 @@
 package nitmeghalaya.shishir2020.screens
 
+import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -7,31 +8,39 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 abstract class BaseFragment : Fragment() {
 
+    private lateinit var mActivity: MainActivity
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        mActivity = activity as MainActivity
+    }
+
     fun setActionbarTitle(title: String) {
-        (activity as MainActivity).supportActionBar?.title = title
+        mActivity.supportActionBar?.title = title
     }
 
     fun hideActionBar() {
-        (activity as MainActivity).supportActionBar?.hide()
+        mActivity.supportActionBar?.hide()
     }
 
     fun showActionBar() {
-        (activity as MainActivity).supportActionBar?.show()
+        mActivity.supportActionBar?.show()
     }
 
     fun hideLoadingAnimation() {
-        (activity as MainActivity).apply {
+        mActivity.apply {
             loading_data_animation.pauseAnimation()
             loading_data_animation.visibility = View.GONE
         }
     }
 
     fun showLoadingAnimation() {
-        (activity as MainActivity).apply {
+        mActivity.apply {
             loading_data_animation.playAnimation()
             navHostFragment
-           // nav_host_fragment
             loading_data_animation.visibility = View.VISIBLE
         }
+    }
+
+    fun hideBottomNavView() {
     }
 }

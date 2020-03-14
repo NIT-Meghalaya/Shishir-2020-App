@@ -1,8 +1,10 @@
 package nitmeghalaya.shishir2020.di
 
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import nitmeghalaya.shishir2020.datasource.FacebookPageFeedDataSourceFactory
 import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
+import nitmeghalaya.shishir2020.screens.MainViewModel
 import nitmeghalaya.shishir2020.screens.eventdescription.team.EventDetailTeamViewModel
 import nitmeghalaya.shishir2020.screens.eventslist.EventsListViewModel
 import nitmeghalaya.shishir2020.screens.eventsschedule.EventsScheduleViewModel
@@ -37,4 +39,5 @@ val appModule = module {
     viewModel { SponsorViewModel(get()) }
     viewModel { TeamsViewModel(get()) }
     viewModel { TeamMembersViewModel() }
+    viewModel { MainViewModel() }
 }
