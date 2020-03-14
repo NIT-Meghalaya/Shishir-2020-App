@@ -10,11 +10,10 @@ class SponsorRecyclerViewAdapter(private val sponsorList: SponsorList) :
     RecyclerView.Adapter<SponsorViewHolder>() {
 
     companion object {
-        public const val TYPE_HEADING = "heading"
+        const val TYPE_HEADING = "heading"
         private const val VIEW_TYPE_HEADING = 0
         private const val VIEW_TYPE_SPONSOR = 1
     }
-
 
     override fun getItemCount() = sponsorList.sponsors.size
 

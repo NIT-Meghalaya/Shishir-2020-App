@@ -89,5 +89,5 @@
     <fragment
         android:id="@+id/sponsorFragment"
         android:name="nitmeghalaya.shishir2020.screens.sponsors.SponsorFragment"
-        android:label="SponsorFragment" />
+        android:label="Sponsors" />
 </navigation>

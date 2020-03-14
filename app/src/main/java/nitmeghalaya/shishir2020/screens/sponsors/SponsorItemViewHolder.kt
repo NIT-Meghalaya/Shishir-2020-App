@@ -7,7 +7,6 @@ import nitmeghalaya.shishir2020.model.SponsorItem
 
 class SponsorListItemViewHolder(view: View, override var type: Int): SponsorViewHolder(view) {
 
-
     override fun bind(item: SponsorItem) {
         itemView.imageView.load(item.imageUrl)
     }
