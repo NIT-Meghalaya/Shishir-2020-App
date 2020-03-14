@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".screens.introslider.IntroSliderActivity"></activity>
         <activity
             android:name=".screens.MainActivity"
             android:theme="@style/AppTheme"></activity>

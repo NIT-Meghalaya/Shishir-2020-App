@@ -122,4 +122,7 @@ dependencies {
 
     //Paging Jetpack Library
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    //IntroSlider
+    implementation 'com.github.AppIntro:AppIntro:5.1.0'
 }
