@@ -78,6 +78,9 @@
             android:name="teamJson"
             app:argType="string"
             android:defaultValue='""' />
+        <action
+            android:id="@+id/action_teamMembersFragment_to_teamsListFragment"
+            app:destination="@id/teamsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/sponsorFragment"

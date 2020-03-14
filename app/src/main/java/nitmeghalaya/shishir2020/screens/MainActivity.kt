@@ -9,22 +9,24 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
+import nitmeghalaya.shishir2020.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {
 
     private val mainViewModel: MainViewModel by viewModel()
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(nitmeghalaya.shishir2020.R.layout.activity_main)
+        setContentView(R.layout.activity_main)
 
         mainViewModel.showBottomNav(bottomNavigationView)
 
         setSupportActionBar(toolbar)
 
-        val navController = findNavController(nitmeghalaya.shishir2020.R.id.navHostFragment)
+        navController = findNavController(R.id.navHostFragment)
         bottomNavigationView.setupWithNavController(navController)
 
         //This prevents showing of up button on toolbar for fragments at top level
@@ -38,9 +40,14 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.navHostFragment).navigateUp()
+                || super.onSupportNavigateUp()
+    }
+
     private val destinationChangedListener = NavController.OnDestinationChangedListener { _, destination, _ ->
         when(destination.id) {
-            nitmeghalaya.shishir2020.R.id.teamMembersFragment -> mainViewModel.hideBottomNav(bottomNavigationView)
+            R.id.teamMembersFragment -> mainViewModel.hideBottomNav(bottomNavigationView)
             else -> mainViewModel.showBottomNav(bottomNavigationView)
         }
     }
