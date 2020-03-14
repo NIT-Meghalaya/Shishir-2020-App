@@ -28,7 +28,6 @@ fun Bitmap.share(context: Context) {
         val newFile = File(imagePath, "this_image.png")
 
         val uri = FileProvider.getUriForFile(context, "nitmeghalaya.shishir2020", newFile)
-
         val shareIntent = Intent()
         shareIntent.action = Intent.ACTION_SEND
         shareIntent.putExtra(Intent.EXTRA_STREAM, uri)

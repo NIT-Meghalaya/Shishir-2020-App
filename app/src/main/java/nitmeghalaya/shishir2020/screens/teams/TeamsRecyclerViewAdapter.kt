@@ -12,7 +12,7 @@ class TeamsRecyclerViewAdapter(private val teams: List<ShishirTeam>)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder =
         TeamViewHolder(LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_team, parent, false))
+            .inflate(R.layout.item_teams_list, parent, false))
 
     override fun getItemCount(): Int = teams.size
 

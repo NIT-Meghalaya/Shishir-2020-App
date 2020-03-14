@@ -7,13 +7,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="@dimen/_4sdp"
     app:cardCornerRadius="@dimen/_6sdp"
+    app:cardBackgroundColor="@color/colorPrimary"
+    android:outlineAmbientShadowColor="@color/colorAccent"
+    android:outlineSpotShadowColor="@color/colorAccent"
     android:layout_marginStart="@dimen/_10sdp"
     android:layout_marginEnd="@dimen/_10sdp"
     android:layout_marginBottom="@dimen/_10sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:outlineSpotShadowColor="@color/colorAccent"
+        android:outlineAmbientShadowColor="@color/colorAccent">
 
         <ImageView
             android:padding="5dp"

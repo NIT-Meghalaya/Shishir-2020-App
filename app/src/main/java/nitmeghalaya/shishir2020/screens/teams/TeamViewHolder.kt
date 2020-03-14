@@ -3,7 +3,7 @@ import android.view.View
 import androidx.navigation.findNavController
 import coil.api.load
 //import kotlinx.android.synthetic.main.item_teams_list.view.*
-import kotlinx.android.synthetic.main.item_team.view.*
+import kotlinx.android.synthetic.main.item_teams_list.view.*
 //import nitmeghalaya.shishir2020.extensions.toJson
 import nitmeghalaya.shishir2020.model.ShishirTeam
 import nitmeghalaya.shishir2020.screens.BaseViewHolder
