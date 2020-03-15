@@ -42,9 +42,7 @@ class MainActivity : AppCompatActivity() {
             bottomNavigationView.visibility = navVisibility
         })
 
-        mainViewModel.scheduleMenuItemVisibility.observe(this, Observer { scheduleVisibility ->
-            bottomNavigationView.menu[1].isVisible = scheduleVisibility
-        })
+        bottomNavigationView.menu[1].isVisible = mainViewModel.canShowSchedule
     }
 
     override fun onSupportNavigateUp(): Boolean {

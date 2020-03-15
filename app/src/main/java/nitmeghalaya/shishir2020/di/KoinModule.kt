@@ -3,12 +3,14 @@ package nitmeghalaya.shishir2020.di
 import nitmeghalaya.shishir2020.datasource.FacebookPageFeedDataSourceFactory
 import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
-import nitmeghalaya.shishir2020.repository.SharedPrefRepository
+import nitmeghalaya.shishir2020.repository.SharedPrefsRepository
 import nitmeghalaya.shishir2020.screens.MainViewModel
 import nitmeghalaya.shishir2020.screens.eventdescription.team.EventDetailTeamViewModel
 import nitmeghalaya.shishir2020.screens.eventslist.EventsListViewModel
 import nitmeghalaya.shishir2020.screens.eventsschedule.EventsScheduleViewModel
 import nitmeghalaya.shishir2020.screens.facebookpagefeed.FacebookPageFeedViewModel
+import nitmeghalaya.shishir2020.screens.introslider.IntroSliderViewModel
+import nitmeghalaya.shishir2020.screens.splash.SplashScreenViewModel
 import nitmeghalaya.shishir2020.screens.sponsors.SponsorViewModel
 import nitmeghalaya.shishir2020.screens.teammembers.TeamMembersViewModel
 import nitmeghalaya.shishir2020.screens.teams.TeamListViewModel
@@ -28,7 +30,7 @@ val facebookPageRepositoryModule = module {
 }
 
 val sharedPrefRepository = module {
-    single { SharedPrefRepository(get()) }
+    single { SharedPrefsRepository(get()) }
 }
 
 val facebookPageFeedDataSourceFactory = module {
@@ -44,4 +46,6 @@ val appModule = module {
     viewModel { TeamListViewModel(get()) }
     viewModel { TeamMembersViewModel() }
     viewModel { MainViewModel(get()) }
+    viewModel { SplashScreenViewModel(get()) }
+    viewModel { IntroSliderViewModel(get()) }
 }
