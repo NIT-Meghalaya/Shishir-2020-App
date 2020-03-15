@@ -15,5 +15,6 @@
     <string name="sponsors">Sponsors</string>
 
     <string name="share_text">\u0020 Shared from Shishir\'s official app</string>
+    <string name="push_notifications_channel">Push notifications</string>
 
 </resources>

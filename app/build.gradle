@@ -128,4 +128,7 @@ dependencies {
 
     //Firebase remote config
     implementation 'com.google.firebase:firebase-config-ktx:19.1.2'
+
+    //Firebase cloud messaging
+    implementation 'com.google.firebase:firebase-messaging:20.1.2'
 }
