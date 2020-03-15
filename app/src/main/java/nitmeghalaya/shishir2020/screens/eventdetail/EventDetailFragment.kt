@@ -9,23 +9,33 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.transition.TransitionInflater
 import coil.api.load
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.fragment_event_detail.view.*
 import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.screens.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import kotlin.math.abs
 
 class EventDetailFragment : Fragment(){
 
     private val args: EventDetailFragmentArgs by navArgs()
     private val mainViewModel: MainViewModel by sharedViewModel()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_event_detail, container, false)
+        return inflater.inflate(R.layout.fragment_event_detail, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         view.apply {
 
             mainViewModel.hideLoadingAnimation()
@@ -43,7 +53,7 @@ class EventDetailFragment : Fragment(){
 
             appBar.addOnOffsetChangedListener(
                 AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
-                    if (Math.abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
+                    if (abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
                         //  Collapsed
                         fabRegister.shrink()
                     } else {
@@ -58,6 +68,5 @@ class EventDetailFragment : Fragment(){
                 context.startActivity(intent)
             }
         }
-        return view
     }
 }
