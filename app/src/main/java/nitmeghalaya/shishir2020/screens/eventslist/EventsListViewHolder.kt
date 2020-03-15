@@ -19,7 +19,6 @@ class EventsListViewHolder(itemView: View) : BaseViewHolder<ShishirEvent>(itemVi
             }
             setOnClickListener { (navigateToEventDetails(it, item)) }
 
-            buttonExplore.setOnClickListener{(navigateToEventDetails(it,item))}
         }
     }
 

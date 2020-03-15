@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/card_margin"
+    android:layout_marginEnd="@dimen/card_margin"
+    android:layout_marginBottom="@dimen/card_margin"
+    app:cardCornerRadius="@dimen/_6sdp"
+    app:cardElevation="@dimen/_6sdp"
+    android:outlineAmbientShadowColor="@color/colorAccent"
+    android:outlineSpotShadowColor="@color/colorAccent">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/card_margin"
-        android:layout_marginEnd="@dimen/card_margin"
-        android:layout_marginBottom="@dimen/card_margin"
-        android:backgroundTint="@color/white"
-        app:cardCornerRadius="@dimen/_6sdp"
-        app:cardElevation="@dimen/_10sdp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        android:backgroundTint="@color/white" >
 
             <ImageView
                 android:id="@+id/imageView"
@@ -26,51 +23,27 @@
                 android:layout_height="160dp"
                 android:background="@color/black"
                 android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/nameTV"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/nameTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:maxLines="20"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:background="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                tools:text="@tools:sample/lorem" />
 
-                <TextView
-                    android:id="@+id/nameTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:maxLines="20"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    tools:text="@tools:sample/lorem" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="end">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonShare"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/buttonBackground"
-                    android:text="@string/action_share"
-                    android:textColor="@color/colorPrimaryDark" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonExplore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:backgroundTint="@color/buttonBackground"
-                    android:text="@string/action_explore"
-                    android:textColor="@color/colorPrimaryDark" />
-            </LinearLayout>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-</RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
