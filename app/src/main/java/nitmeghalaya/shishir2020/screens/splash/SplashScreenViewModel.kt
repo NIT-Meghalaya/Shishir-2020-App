@@ -16,6 +16,7 @@ class SplashScreenViewModel(private val sharedPrefsRepository: SharedPrefsReposi
 
     companion object {
         private const val SHOW_SCHEDULE_REMOTE_CONFIG_KEY = "show_schedule"
+        private const val REMOTE_CONFIG_FETCH_INTERVAL = 7200L
     }
 
     private var remoteConfig = Firebase.remoteConfig
@@ -44,7 +45,7 @@ class SplashScreenViewModel(private val sharedPrefsRepository: SharedPrefsReposi
 
     private fun setUpRemoteConfig() {
         val configSettings = remoteConfigSettings {
-            minimumFetchIntervalInSeconds = 30
+            minimumFetchIntervalInSeconds = REMOTE_CONFIG_FETCH_INTERVAL
         }
         remoteConfig.setConfigSettingsAsync(configSettings)
         remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
