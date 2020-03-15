@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
+        supportActionBar?.show()
         return findNavController(R.id.navHostFragment).navigateUp()
                 || super.onSupportNavigateUp()
     }
@@ -67,6 +68,8 @@ class MainActivity : AppCompatActivity() {
     private val destinationChangedListener = NavController.OnDestinationChangedListener { _, destination, _ ->
         when(destination.id) {
             R.id.teamMembersFragment -> mainViewModel.hideBottomNav(bottomNavigationView)
+            R.id.eventDetailFragment -> supportActionBar?.hide()
+            R.id.eventsListFragment -> supportActionBar?.show()
             else -> mainViewModel.showBottomNav(bottomNavigationView)
         }
     }
