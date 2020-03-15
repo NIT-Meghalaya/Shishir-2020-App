@@ -38,11 +38,15 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener(destinationChangedListener)
 
+        bottomNavigationView.menu[1].isVisible = mainViewModel.canShowSchedule
+
         mainViewModel.bottomNavigationVisibility.observe(this, Observer { navVisibility ->
             bottomNavigationView.visibility = navVisibility
         })
 
-        bottomNavigationView.menu[1].isVisible = mainViewModel.canShowSchedule
+        mainViewModel.loadingAnimationVisibility.observe(this, Observer { visibility ->
+            loadingAnimation.visibility = visibility
+        })
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -7,7 +7,6 @@ import com.google.firebase.iid.FirebaseInstanceId
 import nitmeghalaya.shishir2020.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import splitties.toast.toast
 import timber.log.Timber
 
 /**
@@ -44,7 +43,6 @@ class ShishirApplication: Application() {
                 val token = it.token
                 // Log and toast
                 Timber.i("Token received", token)
-                toast("Token received $token")
             }.addOnFailureListener {
                 Timber.w("getInstanceId failed", it)
             }

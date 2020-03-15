@@ -1,4 +1,4 @@
-package nitmeghalaya.shishir2020.screens.eventdescription
+package nitmeghalaya.shishir2020.screens.eventdetail
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

@@ -1,4 +1,4 @@
-package nitmeghalaya.shishir2020.screens.eventdescription.team
+package nitmeghalaya.shishir2020.screens.eventdetail.team
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

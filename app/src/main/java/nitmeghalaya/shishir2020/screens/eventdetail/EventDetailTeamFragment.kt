@@ -1,4 +1,4 @@
-package nitmeghalaya.shishir2020.screens.eventdescription
+package nitmeghalaya.shishir2020.screens.eventdetail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_event_detail_team.view.*
 import nitmeghalaya.shishir2020.R
-import nitmeghalaya.shishir2020.screens.eventdescription.team.EventDetailTeamRecyclerViewAdapter
-import nitmeghalaya.shishir2020.screens.eventdescription.team.EventDetailTeamViewModel
+import nitmeghalaya.shishir2020.screens.eventdetail.team.EventDetailTeamRecyclerViewAdapter
+import nitmeghalaya.shishir2020.screens.eventdetail.team.EventDetailTeamViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class EventDetailTeamFragment : Fragment() {

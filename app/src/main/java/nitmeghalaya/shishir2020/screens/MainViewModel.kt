@@ -1,5 +1,6 @@
 package nitmeghalaya.shishir2020.screens
 
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,6 +17,10 @@ class MainViewModel(private val sharedPrefsRepository: SharedPrefsRepository): V
     val bottomNavigationVisibility: LiveData<Int>
         get() = _bottomNavigationVisibility
 
+    private val _loadingAnimationVisibility = MutableLiveData<Int>()
+    val loadingAnimationVisibility: LiveData<Int>
+        get() = _loadingAnimationVisibility
+
     val canShowSchedule: Boolean
         get() = sharedPrefsRepository.canShowSchedule
 
@@ -25,5 +30,13 @@ class MainViewModel(private val sharedPrefsRepository: SharedPrefsRepository): V
 
     fun hideBottomNav(bottomNav: BottomNavigationView) {
         bottomNav.animate().translationY(bottomNav.height.toFloat())
+    }
+
+    fun showLoadingAnimation() {
+        _loadingAnimationVisibility.value = View.VISIBLE
+    }
+
+    fun hideLoadingAnimation() {
+        _loadingAnimationVisibility.value = View.GONE
     }
 }

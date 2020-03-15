@@ -6,7 +6,7 @@ import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.repository.SharedPrefsRepository
-import splitties.toast.toast
+import timber.log.Timber
 
 /**
  * Created by Devansh on 15/3/20
@@ -34,12 +34,12 @@ class SplashScreenViewModel(private val sharedPrefsRepository: SharedPrefsReposi
     fun getRemoteConfigValues() {
         remoteConfig.fetchAndActivate()
             .addOnSuccessListener {
-                toast("Fetch succeeded")
+                Timber.d("Fetch succeeded")
                 remoteConfig.activate()
                 sharedPrefsRepository.canShowSchedule =
                     remoteConfig.getString(SHOW_SCHEDULE_REMOTE_CONFIG_KEY) == "yes"
             }.addOnFailureListener {
-                toast("Fetched failed")
+                Timber.d("Fetched failed")
             }
     }
 

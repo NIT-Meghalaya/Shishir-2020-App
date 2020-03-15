@@ -5,7 +5,7 @@ import nitmeghalaya.shishir2020.repository.FacebookPageRepository
 import nitmeghalaya.shishir2020.repository.FirestoreRepository
 import nitmeghalaya.shishir2020.repository.SharedPrefsRepository
 import nitmeghalaya.shishir2020.screens.MainViewModel
-import nitmeghalaya.shishir2020.screens.eventdescription.team.EventDetailTeamViewModel
+import nitmeghalaya.shishir2020.screens.eventdetail.team.EventDetailTeamViewModel
 import nitmeghalaya.shishir2020.screens.eventslist.EventsListViewModel
 import nitmeghalaya.shishir2020.screens.eventsschedule.EventsScheduleViewModel
 import nitmeghalaya.shishir2020.screens.facebookpagefeed.FacebookPageFeedViewModel

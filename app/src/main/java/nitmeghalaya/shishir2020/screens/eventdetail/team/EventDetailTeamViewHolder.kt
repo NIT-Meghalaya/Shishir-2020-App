@@ -1,4 +1,4 @@
-package nitmeghalaya.shishir2020.screens.eventdescription.team
+package nitmeghalaya.shishir2020.screens.eventdetail.team
 
 import android.view.View
 import coil.api.load

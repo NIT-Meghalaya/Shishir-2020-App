@@ -54,7 +54,7 @@
         tools:layout="@layout/fragment_contact" />
     <fragment
         android:id="@+id/eventDetailFragment"
-        android:name="nitmeghalaya.shishir2020.screens.eventdescription.EventDetailFragment"
+        android:name="nitmeghalaya.shishir2020.screens.eventdetail.EventDetailFragment"
         android:label="EventDetailFragment" >
         <argument
             android:name="event"
