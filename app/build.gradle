@@ -117,7 +117,7 @@ dependencies {
     //Coil image loader
     implementation "io.coil-kt:coil:0.9.5"
     
-    //scroll view
+    //DiscreteScrollView
     implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
 
     //Paging Jetpack Library
@@ -125,4 +125,7 @@ dependencies {
 
     //IntroSlider
     implementation 'com.github.AppIntro:AppIntro:5.1.0'
-   }
+
+    //Firebase remote config
+    implementation 'com.google.firebase:firebase-config-ktx:19.1.2'
+}

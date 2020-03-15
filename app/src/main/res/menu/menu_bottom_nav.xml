@@ -16,6 +16,7 @@
         android:title="@string/schedule"
         app:showAsAction="always"
         android:orderInCategory="2"
+        android:visible="false"
         android:icon="@drawable/ic_schedule" />
 
     <item

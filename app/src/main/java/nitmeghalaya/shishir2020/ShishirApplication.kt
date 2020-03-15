@@ -3,10 +3,7 @@ package nitmeghalaya.shishir2020
 import android.app.Application
 import coil.Coil
 import coil.ImageLoader
-import nitmeghalaya.shishir2020.di.appModule
-import nitmeghalaya.shishir2020.di.facebookPageFeedDataSourceFactory
-import nitmeghalaya.shishir2020.di.facebookPageRepositoryModule
-import nitmeghalaya.shishir2020.di.firestoreRepositoryModule
+import nitmeghalaya.shishir2020.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
@@ -23,7 +20,7 @@ class ShishirApplication: Application() {
         startKoin {
             androidContext(this@ShishirApplication)
             modules(listOf(appModule, firestoreRepositoryModule, facebookPageRepositoryModule,
-                facebookPageFeedDataSourceFactory))
+                facebookPageFeedDataSourceFactory, sharedPrefRepository))
         }
 
         if (BuildConfig.DEBUG) {

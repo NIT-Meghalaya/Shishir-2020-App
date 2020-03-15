@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -39,6 +40,10 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.bottomNavigationVisibility.observe(this, Observer { navVisibility ->
             bottomNavigationView.visibility = navVisibility
+        })
+
+        mainViewModel.scheduleMenuItemVisibility.observe(this, Observer { scheduleVisibility ->
+            bottomNavigationView.menu[1].isVisible = scheduleVisibility
         })
     }
 
