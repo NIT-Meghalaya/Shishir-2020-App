@@ -62,10 +62,15 @@ class EventDetailFragment : Fragment(){
                     }
                 })
 
-            fabRegister.setOnClickListener {
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(args.registrationLink)
-                context.startActivity(intent)
+            if (args.registrationLink.isNotEmpty()) {
+                fabRegister.visibility = View.VISIBLE
+                fabRegister.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.data = Uri.parse(args.registrationLink)
+                    context.startActivity(intent)
+                }
+            } else {
+                fabRegister.visibility = View.GONE
             }
         }
     }
