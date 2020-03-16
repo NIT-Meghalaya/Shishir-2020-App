@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkWhite"
+    app:showPaths="false"
+    app:layoutDescription="@xml/collapsing_header"
     tools:context=".screens.eventslist.EventsListFragment">
+
+    <com.github.florent37.shapeofview.shapes.ArcView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:elevation="@dimen/_4sdp"
+        android:background="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shape_arc_height="@dimen/_20sdp"
+        app:shape_arc_position="bottom" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent" />
+
+    </com.github.florent37.shapeofview.shapes.ArcView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -16,7 +38,18 @@
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/header" />
 
+    <ImageView
+        android:id="@+id/shishirCoverImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/shishirw"
+        android:elevation="@dimen/_6sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        android:scaleType="fitCenter"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
