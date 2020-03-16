@@ -11,13 +11,11 @@ import com.yarolegovich.discretescrollview.transform.ScaleTransformer
 import kotlinx.android.synthetic.main.fragment_team_members.view.*
 import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.model.TeamMember
-import nitmeghalaya.shishir2020.screens.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TeamMembersFragment : Fragment() {
 
     private val teamMembersViewModel: TeamMembersViewModel by viewModel()
-    private val mainViewModel: MainViewModel by viewModel()
     private val args: TeamMembersFragmentArgs by navArgs()
 
     override fun onCreateView(

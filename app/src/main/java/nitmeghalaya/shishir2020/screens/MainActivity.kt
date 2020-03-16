@@ -72,10 +72,13 @@ class MainActivity : AppCompatActivity() {
                 bottomNavigationView.hide()
             }
             R.id.eventsListFragment -> {
+                supportActionBar?.hide()
+                bottomNavigationView.show()
+            }
+            else -> {
                 supportActionBar?.show()
                 bottomNavigationView.show()
             }
-            else -> bottomNavigationView.show()
         }
     }
 
