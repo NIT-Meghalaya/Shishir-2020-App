@@ -13,9 +13,9 @@ import nitmeghalaya.shishir2020.repository.SharedPrefsRepository
 
 class MainViewModel(private val sharedPrefsRepository: SharedPrefsRepository): ViewModel() {
 
-    private val _bottomNavigationVisibility = MutableLiveData<Int>()
-    val bottomNavigationVisibility: LiveData<Int>
-        get() = _bottomNavigationVisibility
+    private val _bottomNavigationVisible = MutableLiveData<Boolean>()
+    val bottomNavigationVisible: LiveData<Boolean>
+        get() = _bottomNavigationVisible
 
     private val _loadingAnimationVisibility = MutableLiveData<Int>()
     val loadingAnimationVisibility: LiveData<Int>

@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import nitmeghalaya.shishir2020.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -39,10 +40,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener(destinationChangedListener)
 
         bottomNavigationView.menu[1].isVisible = mainViewModel.canShowSchedule
-
-        mainViewModel.bottomNavigationVisibility.observe(this, Observer { navVisibility ->
-            bottomNavigationView.visibility = navVisibility
-        })
+        supportActionBar?.hide()
 
         mainViewModel.loadingAnimationVisibility.observe(this, Observer { visibility ->
             loadingAnimation.visibility = visibility
@@ -51,6 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         supportActionBar?.show()
+        bottomNavigationView.show()
         return findNavController(R.id.navHostFragment).navigateUp()
                 || super.onSupportNavigateUp()
     }
@@ -67,10 +66,24 @@ class MainActivity : AppCompatActivity() {
 
     private val destinationChangedListener = NavController.OnDestinationChangedListener { _, destination, _ ->
         when(destination.id) {
-            R.id.teamMembersFragment -> mainViewModel.hideBottomNav(bottomNavigationView)
-            R.id.eventDetailFragment -> supportActionBar?.hide()
-            R.id.eventsListFragment -> supportActionBar?.show()
-            else -> mainViewModel.showBottomNav(bottomNavigationView)
+            R.id.teamMembersFragment -> bottomNavigationView.hide()
+            R.id.eventDetailFragment -> {
+                supportActionBar?.hide()
+                bottomNavigationView.hide()
+            }
+            R.id.eventsListFragment -> {
+                supportActionBar?.show()
+                bottomNavigationView.show()
+            }
+            else -> bottomNavigationView.show()
         }
+    }
+
+    private fun BottomNavigationView.show() {
+        mainViewModel.showBottomNav(this)
+    }
+
+    private fun BottomNavigationView.hide() {
+        mainViewModel.hideBottomNav(this)
     }
 }

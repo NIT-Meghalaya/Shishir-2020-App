@@ -11,11 +11,13 @@ import com.yarolegovich.discretescrollview.transform.ScaleTransformer
 import kotlinx.android.synthetic.main.fragment_team_members.view.*
 import nitmeghalaya.shishir2020.R
 import nitmeghalaya.shishir2020.model.TeamMember
+import nitmeghalaya.shishir2020.screens.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TeamMembersFragment : Fragment() {
 
-    private val viewModel: TeamMembersViewModel by viewModel()
+    private val teamMembersViewModel: TeamMembersViewModel by viewModel()
+    private val mainViewModel: MainViewModel by viewModel()
     private val args: TeamMembersFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -24,7 +26,7 @@ class TeamMembersFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_team_members, container, false)
-        val teamMembers = viewModel.getTeamMembersList(args.teamJson)
+        val teamMembers = teamMembersViewModel.getTeamMembersList(args.teamJson)
 
         view.apply {
             discreteScrollView.apply {
@@ -58,4 +60,6 @@ class TeamMembersFragment : Fragment() {
             emailTV.text = memberData.email
         }
     }
+
+
 }
