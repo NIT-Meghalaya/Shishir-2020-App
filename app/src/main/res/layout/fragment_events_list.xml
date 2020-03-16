@@ -44,7 +44,7 @@
         android:id="@+id/shishirCoverImage"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:src="@drawable/shishirw"
+        android:src="@drawable/shishir_logo_without_title"
         android:elevation="@dimen/_6sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
