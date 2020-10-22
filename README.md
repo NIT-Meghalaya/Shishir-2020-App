@@ -36,6 +36,9 @@ This is the repository for the **official app of Shishir 2020**
 
 <img src="https://lh3.googleusercontent.com/5h8pGkXBXbqEkvSfTVvSDT3nEvNWMzWcrH9Jp7i-FPwOum0XepBojKGfjdyhpf5H8yMN=w1536-h759-rw" alt="Screenshot1" width="320"/>
 <img src="https://lh3.googleusercontent.com/KiRgfZoPqX41YJZsexeNWcq6BS80cvDtx7LJ387bHL9dJq7AfTveJdoHFJTCROF9QA=w1536-h759-rw" alt="Screenshot2" width="320"/>
+<img src="https://user-images.githubusercontent.com/71027537/95606435-f6a00400-0a77-11eb-8f33-118339715513.jpeg" alt="Screenshot3" width="320"/>
+<img src="https://user-images.githubusercontent.com/71027537/95606441-f9025e00-0a77-11eb-80b2-cdec7360f8da.jpeg" alt="Screenshot4" width="320"/>
+<img src="https://user-images.githubusercontent.com/71027537/95606451-fb64b800-0a77-11eb-85f1-326621d493bd.jpeg" alt="Screenshot4" width="320"/>
 
 
 ## Development
